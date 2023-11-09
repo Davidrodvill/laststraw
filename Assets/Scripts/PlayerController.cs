@@ -1,25 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
-    [SerializeField] float _speed;
+    public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves, _playerRotationSpeed is how fast the player can turn.
+
+    public GameObject platTest1, platTest2;
+
+    public int location = 0;
+    public bool moving = false;
     public bool canMove = true;
-    Rigidbody2D _rb;
+    public float jump = 200;
+
+    Rigidbody2D rb2d; // reference to RigidBody2d
 
     // Use this for initialization
     void Start () {
-        _rb = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
-        if (!canMove)
+        if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
-            return;
+            moving = false;
+        }
+
+        if (canMove)
+        {
+            //Get the player Position on screen (0-1 in x and y)
+            Vector3 pos = Camera.main.WorldToViewportPoint(
+                transform.position);
+
+           
+            if (Input.GetAxisRaw("Horizontal") > 0 &&
+                pos.x < 0.96f) //right
+            {
+                transform.position += new Vector3(
+                    _playerSpeed * Time.deltaTime, 0);
+                moving = true;
+            }
+            if (Input.GetAxisRaw("Horizontal") < 0 &&
+               pos.x > 0.1f) //left
+            {
+                transform.position -= new Vector3(
+                    _playerSpeed * Time.deltaTime, 0);
+                moving = true;
+            }
+        }
+        //Jump (= SPACE) when on a platform, not air
+        bool canJump = true;
+        if (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position))
+            canJump = (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position).tag == "Platform");
+        else canJump = false;
+
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            rb2d.AddForce(new Vector3(0, jump));
         }
     }
 }
