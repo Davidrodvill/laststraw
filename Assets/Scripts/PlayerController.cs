@@ -4,28 +4,33 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class PlayerController : MonoBehaviour {
     public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves, _playerRotationSpeed is how fast the player can turn.
-
+    public float speed = 15; //for thrust
+    public float jump = 200;
     public GameObject platTest1, platTest2;
 
-    public int location = 0;
+
     public bool moving = false;
+    public bool faceRight;
     public bool canMove = true;
-    public float jump = 200;
+    
+
 
     Rigidbody2D rb2d; // reference to RigidBody2d
 
     // Use this for initialization
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-
+        faceRight = true;
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
+        StartCoroutine(Abilities());
         if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
             moving = false;
@@ -44,6 +49,7 @@ public class PlayerController : MonoBehaviour {
                 transform.position += new Vector3(
                     _playerSpeed * Time.deltaTime, 0);
                 moving = true;
+                faceRight = true;
             }
             if (Input.GetAxisRaw("Horizontal") < 0 &&
                pos.x > 0.1f) //left
@@ -51,10 +57,28 @@ public class PlayerController : MonoBehaviour {
                 transform.position -= new Vector3(
                     _playerSpeed * Time.deltaTime, 0);
                 moving = true;
+                faceRight = false;
+
             }
         }
+        
+        //Thruster (F)
+       /* if (Input.GetKey(KeyCode.F))
+        {
+            if (faceRight)
+            {
+                transform.position += new Vector3(speed * 2 * Time.deltaTime, 0);
+            }
+            else
+            {
+                transform.position -= new Vector3(speed * 2 * Time.deltaTime, 0);
+            }
+
+        }*/
+
         //Jump (= SPACE) when on a platform, not air
         bool canJump = true;
+        //brandon was here :3
         if (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position))
             canJump = (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position).tag == "Platform");
         else canJump = false;
@@ -63,5 +87,26 @@ public class PlayerController : MonoBehaviour {
         {
             rb2d.AddForce(new Vector3(0, jump));
         }
+    }
+
+    IEnumerator Abilities()
+    {
+        
+
+        //Thruster (F)
+        if (Input.GetKey(KeyCode.F))
+        {
+            if (faceRight)
+            {
+                transform.position += new Vector3(speed * 2 * Time.deltaTime, 0);
+            }
+            else
+            {
+                transform.position -= new Vector3(speed * 2 * Time.deltaTime, 0);
+            }
+        }
+        yield return new WaitForSeconds(5);
+
+
     }
 }
