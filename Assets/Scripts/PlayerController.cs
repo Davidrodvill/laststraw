@@ -10,13 +10,14 @@ public class PlayerController : MonoBehaviour {
     public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves, _playerRotationSpeed is how fast the player can turn.
     public float speed = 15; //for thrust
     public float jump = 200;
+    public float Cooldown = 5f;
     public GameObject platTest1, platTest2;
 
 
     public bool moving = false;
     public bool faceRight;
     public bool canMove = true;
-    
+    private bool cool = false;
 
 
     Rigidbody2D rb2d; // reference to RigidBody2d
@@ -25,12 +26,14 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         faceRight = true;
+        
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
-        StartCoroutine(Abilities());
+        
+
         if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
             moving = false;
@@ -63,18 +66,18 @@ public class PlayerController : MonoBehaviour {
         }
         
         //Thruster (F)
-       /* if (Input.GetKey(KeyCode.F))
-        {
+       if (Input.GetKeyDown(KeyCode.F) && (cool = false))
+       {
             if (faceRight)
             {
-                transform.position += new Vector3(speed * 2 * Time.deltaTime, 0);
+                transform.position += new Vector3(speed * 5 * Time.deltaTime, 0);
             }
             else
             {
-                transform.position -= new Vector3(speed * 2 * Time.deltaTime, 0);
+                transform.position -= new Vector3(speed * 5 * Time.deltaTime, 0);
             }
-
-        }*/
+            StartCoroutine(CooldownCoroutine());
+       }
 
         //Jump (= SPACE) when on a platform, not air
         bool canJump = true;
@@ -88,25 +91,11 @@ public class PlayerController : MonoBehaviour {
             rb2d.AddForce(new Vector3(0, jump));
         }
     }
-
-    IEnumerator Abilities()
+   IEnumerator CooldownCoroutine()
     {
-        
-
-        //Thruster (F)
-        if (Input.GetKey(KeyCode.F))
-        {
-            if (faceRight)
-            {
-                transform.position += new Vector3(speed * 2 * Time.deltaTime, 0);
-            }
-            else
-            {
-                transform.position -= new Vector3(speed * 2 * Time.deltaTime, 0);
-            }
-        }
-        yield return new WaitForSeconds(5);
-
-
+        cool = true;
+        yield return new WaitForSeconds(Cooldown);
+        cool = false;
     }
+
 }
