@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float speed = 15; //for thrust
     public float jump = 200;
     public float Cooldown = 5f;
+    public float _nexthit = 0f;
     public GameObject platTest1, platTest2;
 
 
@@ -65,18 +66,18 @@ public class PlayerController : MonoBehaviour {
             }
         }
         
-        //Thruster (F)
-       if (Input.GetKeyDown(KeyCode.F) && (cool = false))
+        //Thruster (F)  
+       if (Input.GetKeyDown(KeyCode.F) && (Time.time > _nexthit))
        {
             if (faceRight)
             {
-                transform.position += new Vector3(speed * 5 * Time.deltaTime, 0);
+                transform.position += new Vector3(speed * 10 * Time.deltaTime, 0);
             }
             else
             {
-                transform.position -= new Vector3(speed * 5 * Time.deltaTime, 0);
+                transform.position -= new Vector3(speed * 10 * Time.deltaTime, 0);
             }
-            StartCoroutine(CooldownCoroutine());
+            _nexthit = Time.time + Cooldown;
        }
 
         //Jump (= SPACE) when on a platform, not air
@@ -91,11 +92,6 @@ public class PlayerController : MonoBehaviour {
             rb2d.AddForce(new Vector3(0, jump));
         }
     }
-   IEnumerator CooldownCoroutine()
-    {
-        cool = true;
-        yield return new WaitForSeconds(Cooldown);
-        cool = false;
-    }
+   
 
 }
