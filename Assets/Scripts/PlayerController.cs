@@ -9,7 +9,6 @@ using System.Threading;
 public class PlayerController : MonoBehaviour {
     public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves, _playerRotationSpeed is how fast the player can turn.
     public float speed = 15; //for thrust
-    public float jump = 200;
     public float Cooldown = 5f;
     public float _nexthit = 0f;
     public GameObject platTest1, platTest2;
@@ -29,12 +28,9 @@ public class PlayerController : MonoBehaviour {
         faceRight = true;
         
     }
-
     // Update is called once per frame
     void FixedUpdate ()
     {
-        
-
         if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
             moving = false;
@@ -62,10 +58,9 @@ public class PlayerController : MonoBehaviour {
                     _playerSpeed * Time.deltaTime, 0);
                 moving = true;
                 faceRight = false;
-
             }
         }
-        
+
         //Thruster (F)  
        if (Input.GetKeyDown(KeyCode.F) && (Time.time > _nexthit))
        {
@@ -77,21 +72,7 @@ public class PlayerController : MonoBehaviour {
             {
                 transform.position -= new Vector3(speed * 10 * Time.deltaTime, 0);
             }
-            _nexthit = Time.time + Cooldown;
+            _nexthit = Time.time + Cooldown; //cooldown timer add
        }
-
-        //Jump (= SPACE) when on a platform, not air
-        bool canJump = true;
-        //brandon was here :3
-        if (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position))
-            canJump = (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position).tag == "Platform");
-        else canJump = false;
-
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
-        {
-            rb2d.AddForce(new Vector3(0, jump));
-        }
     }
-   
-
 }
