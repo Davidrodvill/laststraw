@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 1469733694}
   - component: {fileID: 1469733693}
   m_Layer: 0
-  m_Name: New Piskel-1.png (7)
+  m_Name: citybackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
