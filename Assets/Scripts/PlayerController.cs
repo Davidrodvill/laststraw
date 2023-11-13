@@ -7,14 +7,17 @@ using UnityEngine.SceneManagement;
 using System.Threading;
 
 public class PlayerController : MonoBehaviour {
-    public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves
-    public float speed = 15; //for dash/ability?
+    public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves, _playerRotationSpeed is how fast the player can turn.
+    public float speed = 15; //for thrust
+    public float jump = 200;
     public float Cooldown = 5f;
-    public float _nexthit = 0f;
     public GameObject platTest1, platTest2;
+
+
     public bool moving = false;
     public bool faceRight;
     public bool canMove = true;
+    private bool cool = false;
 
 
     Rigidbody2D rb2d; // reference to RigidBody2d
@@ -60,30 +63,39 @@ public class PlayerController : MonoBehaviour {
                 faceRight = false;
 
             }
-            if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) //up
-            {
-                rb2d.velocity = transform.up * _playerSpeed;
-                moving = true;
-            }
-            if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                rb2d.velocity = -transform.up * _playerSpeed;
-                moving = true;
-            }
         }
         
-        //Thruster (F)  
-       if (Input.GetKeyDown(KeyCode.F) && (Time.time > _nexthit))
+        //Thruster (F)
+       if (Input.GetKeyDown(KeyCode.F) && (cool = false))
        {
             if (faceRight)
             {
-                transform.position += new Vector3(speed * 10 * Time.deltaTime, 0);
+                transform.position += new Vector3(speed * 5 * Time.deltaTime, 0);
             }
             else
             {
-                transform.position -= new Vector3(speed * 10 * Time.deltaTime, 0);
+                transform.position -= new Vector3(speed * 5 * Time.deltaTime, 0);
             }
-            _nexthit = Time.time + Cooldown; //cooldown timer add
+            StartCoroutine(CooldownCoroutine());
        }
+
+        //Jump (= SPACE) when on a platform, not air
+        bool canJump = true;
+        //brandon was here :3
+        if (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position))
+            canJump = (Physics2D.OverlapArea(platTest1.transform.position, platTest2.transform.position).tag == "Platform");
+        else canJump = false;
+
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            rb2d.AddForce(new Vector3(0, jump));
+        }
     }
+   IEnumerator CooldownCoroutine()
+    {
+        cool = true;
+        yield return new WaitForSeconds(Cooldown);
+        cool = false;
+    }
+
 }
