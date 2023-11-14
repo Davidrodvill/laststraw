@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public float _nexthit = 0f;
     public GameObject platTest1, platTest2;
 
+    public Text dialogues;
 
     public bool moving = false;
     public bool faceRight;
