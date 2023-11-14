@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using System.Threading;
 
 public class PlayerController : MonoBehaviour {
-    public float _playerSpeed = 5f; //_playerSpeed is how fast the palyer moves, _playerRotationSpeed is how fast the player can turn.
+    public float _playerSpeed = 5f; //_playerSpeed is how fast the player moves
     public float speed = 15; //for thrust
     public float jump = 200;
     public float Cooldown = 5f;
