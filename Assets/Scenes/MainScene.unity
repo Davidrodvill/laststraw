@@ -241,7 +241,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 9.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1386,13 +1386,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33751df881437f244843e6da5451a22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 5
+  _playerSpeed: 9
+  hSpeed: 10
+  vSpeed: 6
   speed: 15
   jump: 200
   Cooldown: 5
   _nexthit: 0
   platTest1: {fileID: 1206986781}
   platTest2: {fileID: 1756804146}
+  anim: {fileID: 0}
   dialogues: {fileID: 0}
   moving: 0
   faceRight: 0
