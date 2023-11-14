@@ -64,14 +64,16 @@ public class PlayerController : MonoBehaviour {
                 faceRight = false;
 
             }
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) //up
+            if (Input.GetAxisRaw("Vertical") == 1) //up
             {
-                rb2d.velocity = transform.up * _playerSpeed;
+                //Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)
+                //rb2d.velocity = transform.up * _playerSpeed;
+                transform.position += new Vector3(0, _playerSpeed * Time.deltaTime);
                 moving = true;
             }
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetAxisRaw("Vertical") == -1) //down
             {
-                rb2d.velocity = -transform.up * _playerSpeed;
+                transform.position -= new Vector3(0, _playerSpeed * Time.deltaTime);
                 moving = true;
             }
         }
