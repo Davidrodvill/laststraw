@@ -15,14 +15,16 @@ public class PlayerController : MonoBehaviour
     public float jump = 200;
     public float Cooldown = 5f;
     public float _nexthit = 0f;
+    public int hp = 10;
+    public Slider healthBar;
     public GameObject platTest1, platTest2;
-    public Animator anim;
+    Animator anim;
 
-    public Text dialogues;
+    public Text dialogues, playerName;
 
     public bool moving = false;
     public bool faceRight = true;
-    public bool canMove = true;
+    public bool canMove = true, die = false, win = false;
 
 
 
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        healthBar.value = hp;
 
         if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
@@ -59,7 +61,7 @@ public class PlayerController : MonoBehaviour
                 moving = true;
                 anim.SetBool("StartsFlying", true);
                 anim.SetBool("IsMoving", true);
-
+                anim.SetBool("StopsFlying", false);
 
                 //if stops moving, set StopsFlying trigger here true
                 if (moving == false)
@@ -73,32 +75,22 @@ public class PlayerController : MonoBehaviour
                 moving = true;
                 anim.SetBool("StartsFlying", true);
                 anim.SetBool("IsMoving", true);
+                anim.SetBool("StopsFlying", false);
 
                 //if stops moving, set StopsFlying trigger here true
 
             }
             if (Input.GetAxisRaw("Horizontal") > 0 && pos.x < 0.98f) //right
             {
+                Debug.Log("D key has been pressed");
                 transform.position += new Vector3(hSpeed * Time.deltaTime, 0);
                 moving = true;
                 anim.SetBool("StartsFlying", true);
                 anim.SetBool("IsMoving", true);
+                anim.SetBool("StopsFlying", false);
 
-                //when player stops moving (lets go of the key), set moving = false
 
-                if(Input.GetKeyUp(KeyCode.D))
-                {
-                    Debug.Log("A key has been let go");
-                    moving = false;
-                }
-
-                //if stops moving, set StopsFlying trigger here true
-                if(moving == false)
-                {
-                    anim.SetBool("StartsFlying", false);
-                    anim.SetBool("StopsFlying", true);
-                    anim.SetBool("IsMoving", false);
-                }
+               
 
                 //if we were facing left, flip
                 if (!faceRight)
@@ -114,6 +106,7 @@ public class PlayerController : MonoBehaviour
                 moving = true;
                 anim.SetBool("StartsFlying", true);
                 anim.SetBool("IsMoving", true);
+                anim.SetBool("StopsFlying", false);
 
                 //if stops moving, set StopsFlying trigger here true
 
@@ -127,7 +120,27 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            //if stops moving, set StopsFlying trigger here true
+            if (moving == false)
+            {
+                anim.SetBool("StartsFlying", false);
+                anim.SetBool("StopsFlying", true);
+                anim.SetBool("IsMoving", false);
+            }
 
+            /*
+            //when player stops moving (lets go of the key), set moving = false
+
+            if (Input.GetKeyUp(KeyCode.D) || (Input.GetKeyUp(KeyCode.A)) || (Input.GetKeyUp(KeyCode.W)) || (Input.GetKeyUp(KeyCode.S)))
+            {
+                Debug.Log("all keys has been let go");
+                moving = false;
+
+                anim.SetBool("StartsFlying", false);
+                anim.SetBool("IsMoving", false);
+                anim.SetBool("StopsFlying", true);
+            }
+            */
         }
 
         /*
@@ -244,6 +257,30 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if(other.tag == "NormalCar")
+        {
+            //player takes damage
+            hp--;
+
+            Debug.Log("Player has been hit by a NormalCar");
+        }
+
+
+        if (other.tag == "BigCar") //big cars do a bit more damage
+        {
+            //player takes 2 damage
+            hp = (hp - 2);
+
+            Debug.Log("Player has been hit by a BigCar. That shit hurted.");
+        }
+    }
+
+
 }
         
 

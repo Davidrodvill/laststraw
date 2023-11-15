@@ -7,6 +7,7 @@ public class CarThrow : MonoBehaviour {
     public float _carSpeedBackwards = 5f;
 
     Rigidbody2D rb2d; // reference to RigidBody2d
+    GameObject player; //needed so the script knows where the player is
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
 
@@ -22,8 +23,11 @@ public class CarThrow : MonoBehaviour {
 	}
     IEnumerator waitsomeSeconds()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         rb2d.velocity = transform.position -= new Vector3(_carSpeedBackwards * Time.deltaTime, 0);
         
     }
+
+   
+
 }
