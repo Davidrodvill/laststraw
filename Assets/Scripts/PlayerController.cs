@@ -128,9 +128,9 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("IsMoving", false);
             }
 
-            /*
+            
             //when player stops moving (lets go of the key), set moving = false
-
+            /*
             if (Input.GetKeyUp(KeyCode.D) || (Input.GetKeyUp(KeyCode.A)) || (Input.GetKeyUp(KeyCode.W)) || (Input.GetKeyUp(KeyCode.S)))
             {
                 Debug.Log("all keys has been let go");
