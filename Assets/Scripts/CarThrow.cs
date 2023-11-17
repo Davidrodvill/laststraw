@@ -25,6 +25,15 @@ public class CarThrow : MonoBehaviour {
         transform.position -= new Vector3(_carSpeedBackwards * Time.deltaTime, 0);
 
         transform.Rotate(new Vector3(0, 0, 45 * rotateSpeed * Time.deltaTime));
+
+        /*
+        //clean-up: if enough off camera, delete self
+        Vector3 screenpos = Camera.main.WorldToViewportPoint(transform.position);
+        if (screenpos.x < -181.6f)
+        {
+            Destroy(gameObject);
+        }
+        */
     }
     IEnumerator waitsomeSeconds()
     {
@@ -38,6 +47,15 @@ public class CarThrow : MonoBehaviour {
         //rb2d.AddForce(-transform.position * _carSpeedBackwards);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "CarDestroy")
+        {
+            Destroy(gameObject);
+        }
+
+
+    }
 
 
 }
