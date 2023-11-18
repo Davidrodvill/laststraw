@@ -27,9 +27,9 @@ public class CarThrowSpawner : MonoBehaviour
         //wait a few seconds before new wave of cars start
         StartCoroutine(TimeBetweenWaves());
         //start car wave 2
-        CarWave2();
+        //CarWave2();
         //wait a few seconds before new wave of cars start
-        StartCoroutine(TimeBetweenWaves());
+        //StartCoroutine(TimeBetweenWaves());
 
         //start car wave 3
 
@@ -99,7 +99,7 @@ public class CarThrowSpawner : MonoBehaviour
 
             if (TimeBetweenCarThrows <= 0)
             {
-                Debug.Log("time has ended. New car should spawn now");
+                Debug.Log("wave 1 time has ended. New car should spawn now");
 
                 
                 //here is where the new cars should instantiate
@@ -168,7 +168,7 @@ public class CarThrowSpawner : MonoBehaviour
 
             if (TimeBetweenCarThrows <= 0)
             {
-                Debug.Log("time has ended. New car should spawn now");
+                Debug.Log("wave 2 time has ended. New car should spawn now");
 
 
                 //here is where the new cars should instantiate
