@@ -8,6 +8,7 @@ using System.Threading;
 
 public class PlayerController : MonoBehaviour
 {
+   
     public float _playerSpeed = 5f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
     public float hSpeed = 10f, vSpeed = 6f;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float _nexthit = 0f;
     public int hp = 10;
     public Slider healthBar;
-    public GameObject platTest1, platTest2;
+    public GameObject platTest1, platTest2, dialogue_box;
     Animator anim;
 
     public Text dialogues, playerName;
@@ -36,11 +37,19 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         faceRight = true;
         anim = GetComponent<Animator>();
+        dialogue_box.SetActive(false);
+        dialogues.text = "";
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //dialogue
+        if(Input.GetKey(KeyCode.T))
+        {
+            dialogue_box.SetActive(true);
+            dialogues.text = "im goku";
+        }
         healthBar.value = hp;
 
         if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
