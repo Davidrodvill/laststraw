@@ -17,17 +17,20 @@ public class CarThrowSpawner : MonoBehaviour
 
     void Start()
     {
+        print(this.gameObject.name);
         player = GameObject.Find("Player");
         rb2d = GetComponent<Rigidbody2D>();
         //StartCoroutine(waitsomeSeconds());
 
         //car wave 1 starts
-        CarWave1();
-
+        //CarWave1();
+        StartCoroutine(Wave1CarThrow());
+        
         //wait a few seconds before new wave of cars start
         StartCoroutine(TimeBetweenWaves());
         //start car wave 2
-        CarWave2();
+        //CarWave2();
+        StartCoroutine(Wave2CarThrow());
         //wait a few seconds before new wave of cars start
         StartCoroutine(TimeBetweenWaves());
 
@@ -64,7 +67,7 @@ public class CarThrowSpawner : MonoBehaviour
         //instantiate a set of cars at a specific point, but don't have them all instantiate at the same time.
 
         
-        StartCoroutine(Wave1CarThrow());
+        //StartCoroutine(Wave1CarThrow());
         
         /* this would move the entire CarSpawn game object towards the player, since this script is attached to it.
         //add a force so that they launch towards the player
@@ -75,7 +78,7 @@ public class CarThrowSpawner : MonoBehaviour
 
     void CarWave2()
     {
-        StartCoroutine(Wave2CarThrow());
+        //StartCoroutine(Wave2CarThrow());
 
 
     }
@@ -83,7 +86,7 @@ public class CarThrowSpawner : MonoBehaviour
     IEnumerator Wave1CarThrow()
     {
         TimeBetweenCarThrows = 3;
-
+        print("sup");
 
         while(TimeBetweenCarThrows > 0)
         {
@@ -108,6 +111,7 @@ public class CarThrowSpawner : MonoBehaviour
                     Instantiate(Car2.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car2Spawn = true;
                     car1Spawn = false;
+                    print("hey");
                 }
                 if (car2Spawn == true)
                 {
@@ -115,7 +119,7 @@ public class CarThrowSpawner : MonoBehaviour
                     Instantiate(Car3.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car3Spawn = true;
                     car2Spawn = false;
-
+                    print("im");
                 }
                 if (car3Spawn == true)
                 {
@@ -123,7 +127,7 @@ public class CarThrowSpawner : MonoBehaviour
                     Instantiate(Car3.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car4Spawn = true;
                     car3Spawn = false;
-
+                    print("goku");
                 }
                 if (car4Spawn == true)
                 {
@@ -131,14 +135,14 @@ public class CarThrowSpawner : MonoBehaviour
                     Instantiate(Car4.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car5Spawn = true;
                     car4Spawn = false;
-
+                    print("tooth");
                 }
                 if (car5Spawn == true)
                 {
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car5.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car5Spawn = false;
-
+                    print("pick");
                 }
                 
             }
@@ -150,9 +154,9 @@ public class CarThrowSpawner : MonoBehaviour
     IEnumerator Wave2CarThrow()
     {
         TimeBetweenCarThrows = 3;
+        yield return new WaitForSeconds(5);
 
-        
-
+        print("pups");
 
         while (TimeBetweenCarThrows > 0)
         {

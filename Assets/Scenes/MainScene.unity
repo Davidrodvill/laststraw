@@ -1018,7 +1018,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410675452}
-  - component: {fileID: 410675453}
   m_Layer: 0
   m_Name: CarSpawn 2
   m_TagString: Untagged
@@ -1039,38 +1038,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &410675453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 410675451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9ed624caaeb7d4e8a4f7016ccc862c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carSpeedBackwards: 0
-  player: {fileID: 1813058825}
-  carSpawnPoint1: {fileID: 62443612}
-  carSpawnPoint2: {fileID: 410675452}
-  carSpawnPoint3: {fileID: 1742606675}
-  Car1: {fileID: 1088201897044188, guid: 75f13d16b4652094e9e722bb80c0f2a0, type: 2}
-  Car2: {fileID: 1285097030524238, guid: 554bedb38419d9541861861f46e864d6, type: 2}
-  Car3: {fileID: 1138063592893382, guid: 43f01fa62856aa145ae67aa648aa53e8, type: 2}
-  Car4: {fileID: 1173151313639272, guid: 8ceec8091bbca7f44b22359cae6bd0ec, type: 2}
-  Car5: {fileID: 1705363936842824, guid: 8eb8118385b097b40b9e740931f4b916, type: 2}
-  Car6: {fileID: 1828204506080052, guid: 2a82cd719d6d7934fa805460eaf43c1d, type: 2}
-  Car7: {fileID: 1924703589966956, guid: f7c58b5c0de45034b9710927900c69ab, type: 2}
-  Car8: {fileID: 1319283114295132, guid: 6569c9835e360de4594e3906c52bac77, type: 2}
-  car1Spawn: 0
-  car2Spawn: 0
-  car3Spawn: 0
-  car4Spawn: 0
-  car5Spawn: 0
-  car6Spawn: 0
-  car7Spawn: 0
-  car8Spawn: 0
 --- !u!1 &416011234
 GameObject:
   m_ObjectHideFlags: 0
