@@ -18,8 +18,11 @@ public class PlayerController : MonoBehaviour
     public float _nexthit = 0f;
     public int hp = 10;
     public Slider healthBar;
-    public GameObject platTest1, platTest2, dialogue_box;
+    public GameObject platTest1, platTest2, dialogue_box, blackoutSquare;
     Animator anim;
+    public Color color1Player;
+    public Color color2Player;
+    public SpriteRenderer sr1;
 
     public Text dialogues, playerName;
 
@@ -270,6 +273,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        StartCoroutine(PlayerDamaged());
 
         if(other.tag == "NormalCar")
         {
@@ -277,8 +281,10 @@ public class PlayerController : MonoBehaviour
             hp--;
 
             Debug.Log("Player has been hit by a NormalCar");
-        }
 
+            
+        }
+        
 
         if (other.tag == "BigCar") //big cars do a bit more damage
         {
@@ -287,8 +293,73 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log("Player has been hit by a BigCar. That shit hurted.");
         }
+
+        else if (hp <= 0)
+        {
+            Die();
+        }
+
     }
 
+    void Die()
+    {
+        canMove = false;
+        moving = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
+
+        //screen will fade to black then reload the scene
+        StartCoroutine(FadeBlackOutSquare());
+       
+
+    }
+
+    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 1) //fade to black after death
+    {
+
+        Color objectColor = blackoutSquare.GetComponent<Image>().color;
+        float fadeAmount;
+
+        if (fadeToBlack)
+        {
+            while (blackoutSquare.GetComponent<Image>().color.a < 1)
+            {
+
+                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                blackoutSquare.GetComponent<Image>().color = objectColor;
+                yield return null;
+            }
+
+        }
+        else
+        {
+
+            while (blackoutSquare.GetComponent<Image>().color.a > 0)
+            {
+                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                blackoutSquare.GetComponent<Image>().color = objectColor;
+                yield return null;
+
+            }
+
+        }
+
+        //after screen fully fades, respawn level
+        SceneManager.LoadScene(0);
+
+    }
+
+    IEnumerator PlayerDamaged()
+    {
+
+        sr1.color = color2Player;
+        yield return new WaitForSeconds(.5f);
+        sr1.color = color1Player;
+
+    }
 
 }
         
