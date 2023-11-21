@@ -261,7 +261,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 62443612}
-  - component: {fileID: 62443611}
   m_Layer: 0
   m_Name: CarSpawn 1
   m_TagString: Untagged
@@ -269,50 +268,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &62443611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 62443610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9ed624caaeb7d4e8a4f7016ccc862c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carSpeedBackwards: 0
-  player: {fileID: 1813058825}
-  carSpawnPoint1: {fileID: 62443612}
-  carSpawnPoint2: {fileID: 410675452}
-  carSpawnPoint3: {fileID: 1742606675}
-  Car1: {fileID: 1088201897044188, guid: 75f13d16b4652094e9e722bb80c0f2a0, type: 2}
-  Car2: {fileID: 1285097030524238, guid: 554bedb38419d9541861861f46e864d6, type: 2}
-  Car3: {fileID: 1138063592893382, guid: 43f01fa62856aa145ae67aa648aa53e8, type: 2}
-  Car4: {fileID: 1173151313639272, guid: 8ceec8091bbca7f44b22359cae6bd0ec, type: 2}
-  Car5: {fileID: 1705363936842824, guid: 8eb8118385b097b40b9e740931f4b916, type: 2}
-  Car6: {fileID: 1828204506080052, guid: 2a82cd719d6d7934fa805460eaf43c1d, type: 2}
-  Car7: {fileID: 1924703589966956, guid: f7c58b5c0de45034b9710927900c69ab, type: 2}
-  Car8: {fileID: 1319283114295132, guid: 6569c9835e360de4594e3906c52bac77, type: 2}
-  car1Spawn: 0
-  car2Spawn: 0
-  car3Spawn: 0
-  car4Spawn: 0
-  car5Spawn: 0
-  car6Spawn: 0
-  car7Spawn: 0
-  car8Spawn: 0
 --- !u!4 &62443612
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 62443610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 189.6, y: 11.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 379756900}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112871501
 GameObject:
@@ -905,6 +872,70 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &379756898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 379756900}
+  - component: {fileID: 379756899}
+  m_Layer: 0
+  m_Name: CarSpawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &379756899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 379756898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed624caaeb7d4e8a4f7016ccc862c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSpeedBackwards: 0
+  player: {fileID: 1813058825}
+  carSpawnPoint1: {fileID: 62443612}
+  carSpawnPoint2: {fileID: 410675452}
+  carSpawnPoint3: {fileID: 1742606675}
+  Car1: {fileID: 1088201897044188, guid: 75f13d16b4652094e9e722bb80c0f2a0, type: 2}
+  Car2: {fileID: 1285097030524238, guid: 554bedb38419d9541861861f46e864d6, type: 2}
+  Car3: {fileID: 1138063592893382, guid: 43f01fa62856aa145ae67aa648aa53e8, type: 2}
+  Car4: {fileID: 1173151313639272, guid: 8ceec8091bbca7f44b22359cae6bd0ec, type: 2}
+  Car5: {fileID: 1705363936842824, guid: 8eb8118385b097b40b9e740931f4b916, type: 2}
+  Car6: {fileID: 1828204506080052, guid: 2a82cd719d6d7934fa805460eaf43c1d, type: 2}
+  Car7: {fileID: 1924703589966956, guid: f7c58b5c0de45034b9710927900c69ab, type: 2}
+  Car8: {fileID: 1319283114295132, guid: 6569c9835e360de4594e3906c52bac77, type: 2}
+  car1Spawn: 0
+  car2Spawn: 0
+  car3Spawn: 0
+  car4Spawn: 0
+  car5Spawn: 0
+  car6Spawn: 0
+  car7Spawn: 0
+  car8Spawn: 0
+--- !u!4 &379756900
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 379756898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 189.6, y: 11.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 62443612}
+  - {fileID: 410675452}
+  - {fileID: 1742606675}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381782772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,12 +1062,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 410675451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 189.6, y: 0.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -11.099999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 379756900}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416011234
 GameObject:
@@ -1697,7 +1728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &818017750
 GameObject:
@@ -2075,7 +2106,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 17.9
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2157,34 +2188,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4312785342506364, guid: 6569c9835e360de4594e3906c52bac77,
     type: 2}
   m_PrefabInternal: {fileID: 1397364259}
---- !u!1 &1206986781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1206986782}
-  m_Layer: 0
-  m_Name: plat1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1206986782
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1206986781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17, y: -0.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1813058829}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221035518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2774,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1742606675}
-  - component: {fileID: 1742606674}
   m_Layer: 0
   m_Name: CarSpawn 3
   m_TagString: Untagged
@@ -2779,78 +2781,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1742606674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1742606673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9ed624caaeb7d4e8a4f7016ccc862c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carSpeedBackwards: 0
-  player: {fileID: 1813058825}
-  carSpawnPoint1: {fileID: 62443612}
-  carSpawnPoint2: {fileID: 410675452}
-  carSpawnPoint3: {fileID: 1742606675}
-  Car1: {fileID: 1088201897044188, guid: 75f13d16b4652094e9e722bb80c0f2a0, type: 2}
-  Car2: {fileID: 1285097030524238, guid: 554bedb38419d9541861861f46e864d6, type: 2}
-  Car3: {fileID: 1138063592893382, guid: 43f01fa62856aa145ae67aa648aa53e8, type: 2}
-  Car4: {fileID: 1173151313639272, guid: 8ceec8091bbca7f44b22359cae6bd0ec, type: 2}
-  Car5: {fileID: 1705363936842824, guid: 8eb8118385b097b40b9e740931f4b916, type: 2}
-  Car6: {fileID: 1828204506080052, guid: 2a82cd719d6d7934fa805460eaf43c1d, type: 2}
-  Car7: {fileID: 1924703589966956, guid: f7c58b5c0de45034b9710927900c69ab, type: 2}
-  Car8: {fileID: 1319283114295132, guid: 6569c9835e360de4594e3906c52bac77, type: 2}
-  car1Spawn: 0
-  car2Spawn: 0
-  car3Spawn: 0
-  car4Spawn: 0
-  car5Spawn: 0
-  car6Spawn: 0
-  car7Spawn: 0
-  car8Spawn: 0
 --- !u!4 &1742606675
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1742606673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 189.6, y: -13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1756804146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1756804147}
-  m_Layer: 0
-  m_Name: plat2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1756804147
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1756804146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0, y: -24.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1813058829}
-  m_RootOrder: 1
+  m_Father: {fileID: 379756900}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813058825
 GameObject:
@@ -2892,8 +2834,9 @@ MonoBehaviour:
   _nexthit: 0
   hp: 10
   healthBar: {fileID: 379133721}
-  platTest1: {fileID: 1206986781}
-  platTest2: {fileID: 1756804146}
+  progressMeter: {fileID: 853114674}
+  platTest1: {fileID: 0}
+  platTest2: {fileID: 0}
   dialogue_box: {fileID: 1978534317}
   blackoutSquare: {fileID: 1897203899}
   color1Player: {r: 1, g: 1, b: 1, a: 1}
@@ -2977,9 +2920,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -165.9, y: -4.9, z: 0}
   m_LocalScale: {x: 1.5005757, y: 1.5150751, z: 0.4711301}
-  m_Children:
-  - {fileID: 1206986782}
-  - {fileID: 1756804147}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

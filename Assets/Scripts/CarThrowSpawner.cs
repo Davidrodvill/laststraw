@@ -17,6 +17,7 @@ public class CarThrowSpawner : MonoBehaviour
 
     void Start()
     {
+        
         player = GameObject.Find("Player");
         rb2d = GetComponent<Rigidbody2D>();
         //StartCoroutine(waitsomeSeconds());
@@ -26,10 +27,11 @@ public class CarThrowSpawner : MonoBehaviour
 
         //wait a few seconds before new wave of cars start
         StartCoroutine(TimeBetweenWaves());
+        
         //start car wave 2
-        //CarWave2();
+        CarWave2();
         //wait a few seconds before new wave of cars start
-        //StartCoroutine(TimeBetweenWaves());
+        StartCoroutine(TimeBetweenWaves());
 
         //start car wave 3
 
@@ -75,6 +77,7 @@ public class CarThrowSpawner : MonoBehaviour
 
     void CarWave2()
     {
+        
         StartCoroutine(Wave2CarThrow());
 
 
@@ -83,7 +86,7 @@ public class CarThrowSpawner : MonoBehaviour
     IEnumerator Wave1CarThrow()
     {
         TimeBetweenCarThrows = 3;
-
+        
 
         while(TimeBetweenCarThrows > 0)
         {
@@ -105,12 +108,14 @@ public class CarThrowSpawner : MonoBehaviour
                 //here is where the new cars should instantiate
                 if (car1Spawn == true)
                 {
+                    yield return new WaitForSeconds(1);
                     Instantiate(Car2.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car2Spawn = true;
                     car1Spawn = false;
                 }
                 if (car2Spawn == true)
                 {
+                    yield return new WaitForSeconds(1);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car3.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car3Spawn = true;
@@ -119,6 +124,7 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if (car3Spawn == true)
                 {
+                    yield return new WaitForSeconds(1);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car3.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car4Spawn = true;
@@ -127,6 +133,7 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if (car4Spawn == true)
                 {
+                    yield return new WaitForSeconds(1);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car4.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car5Spawn = true;
@@ -135,12 +142,14 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if (car5Spawn == true)
                 {
+                    yield return new WaitForSeconds(1);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car5.gameObject, carSpawnPoint1.position, Quaternion.identity);
                     car5Spawn = false;
 
                 }
-                
+               
+
             }
 
         }
@@ -156,9 +165,9 @@ public class CarThrowSpawner : MonoBehaviour
 
         while (TimeBetweenCarThrows > 0)
         {
-            //wait for one second
-            yield return new WaitForSeconds(1);
-
+            //wait for nine second
+            yield return new WaitForSeconds(9);
+            print("aye");
             //tick the timer down
             TimeBetweenCarThrows--;
             Debug.Log(TimeBetweenCarThrows);
@@ -174,12 +183,14 @@ public class CarThrowSpawner : MonoBehaviour
                 //here is where the new cars should instantiate
                 if (car1Spawn == true)
                 {
+                    yield return new WaitForSeconds(2);
                     Instantiate(Car2.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car2Spawn = true;
                     car1Spawn = false;
                 }
                 if (car2Spawn == true)
                 {
+                    yield return new WaitForSeconds(2);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car3.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car3Spawn = true;
@@ -188,6 +199,7 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if (car3Spawn == true)
                 {
+                    yield return new WaitForSeconds(2);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car3.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car4Spawn = true;
@@ -196,6 +208,7 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if (car4Spawn == true)
                 {
+                    yield return new WaitForSeconds(2);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car4.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car5Spawn = true;
@@ -204,6 +217,7 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if (car5Spawn == true)
                 {
+                    yield return new WaitForSeconds(2);
                     //StartCoroutine(TimeBetweenCarThrow());
                     Instantiate(Car5.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car5Spawn = false;
@@ -211,23 +225,24 @@ public class CarThrowSpawner : MonoBehaviour
                 }
                 if(car6Spawn == true)
                 {
-
+                    yield return new WaitForSeconds(2);
                     Instantiate(Car6.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car6Spawn = false;
                     car7Spawn = true;
                 }
                 if(car7Spawn == true)
                 {
-
+                    yield return new WaitForSeconds(2);
                     Instantiate(Car7.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car7Spawn = false;
                     car8Spawn = true;
                 }
                 if(car8Spawn == true)
                 {
+                    yield return new WaitForSeconds(2);
                     Instantiate(Car8.gameObject, carSpawnPoint2.position, Quaternion.identity);
                     car8Spawn = false;
-
+                    print("bud");
                 }
 
             }
