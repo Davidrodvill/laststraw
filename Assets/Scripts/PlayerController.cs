@@ -5,6 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading;
+using UnityEngine.Video;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,12 +24,14 @@ public class PlayerController : MonoBehaviour
     public Color color1Player;
     public Color color2Player;
     public SpriteRenderer sr1;
+    public VideoPlayer vp1;
+    public GameObject Lvl1Cutscene1;
 
-    public Text dialogues, playerName;
+    public Text dialogues, playerName, pauseText;
 
     public bool moving = false;
     public bool faceRight = true;
-    public bool canMove = true, die = false, win = false;
+    public bool canMove = true, die = false, win = false, gamePaused;
 
 
 
@@ -42,13 +45,37 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         dialogue_box.SetActive(false);
         dialogues.text = "";
+        pauseText.text = "";
+        vp1.enabled = true;
+        Lvl1Cutscene1.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !gamePaused) //pauses game
+        {
+
+            PauseGame();
+
+        }
+
+
+        else if (Input.GetKeyDown(KeyCode.Escape) && gamePaused) //unpauses game
+        {
+
+            ResumeGame();
+
+        }
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
         //dialogue
-        if(Input.GetKey(KeyCode.T))
+        if (Input.GetKey(KeyCode.T))
         {
             dialogue_box.SetActive(true);
             dialogues.text = "im goku";
@@ -275,10 +302,32 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(PlayerDamaged());
 
-        if(other.tag == "NormalCar")
+        if(other.tag == "CutsceneStart")
         {
+
+            Debug.Log("Cutscene should play here");
+            Destroy(other.gameObject);
+
+            StartCoroutine(Level1Cutscene1Wait());
+
+        }
+
+        if(other.tag == "EndOfLevel")
+        {
+            Debug.Log("You have beat the level!");
+
+            win = true;
+
+            //everything here gets disabled first
+
+            //cutscene plays here, signaling the end of the level.
+
+        }
+
+        if (other.tag == "NormalCar")
+        {
+            StartCoroutine(PlayerDamaged());
             //player takes damage
             hp--;
 
@@ -290,13 +339,14 @@ public class PlayerController : MonoBehaviour
 
         if (other.tag == "BigCar") //big cars do a bit more damage
         {
+            StartCoroutine(PlayerDamaged());
             //player takes 2 damage
             hp = (hp - 2);
 
             Debug.Log("Player has been hit by a BigCar. That shit hurted.");
         }
 
-        else if (hp <= 0)
+        else if (hp <= 0 || hp == 0)
         {
             Die();
         }
@@ -354,12 +404,49 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    IEnumerator Level1Cutscene1Wait()
+    {
+        gamePaused = true;
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        canMove = false;
+
+        Debug.Log("game has been paused for the opening cutscene");
+        yield return new WaitForSecondsRealtime(61f);
+        Lvl1Cutscene1.SetActive(false);
+        vp1.enabled = false;
+        gamePaused = false;
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        canMove = true;
+    }
+
     IEnumerator PlayerDamaged()
     {
 
         sr1.color = color2Player;
         yield return new WaitForSeconds(.5f);
         sr1.color = color1Player;
+
+    }
+
+    void PauseGame()
+    {
+        gamePaused = true;
+        Time.timeScale = 0;
+        pauseText.text = "PAUSED";
+        AudioListener.pause = true;
+        canMove = false;
+
+    }
+
+    void ResumeGame()
+    {
+        gamePaused = false;
+        Time.timeScale = 1;
+        pauseText.text = "";
+        AudioListener.pause = false;
+        canMove = true;
 
     }
 

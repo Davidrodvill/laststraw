@@ -8,6 +8,8 @@ TagManager:
   - NormalCar
   - BigCar
   - CarDestroy
+  - EndOfLevel
+  - CutsceneStart
   layers:
   - Default
   - TransparentFX
