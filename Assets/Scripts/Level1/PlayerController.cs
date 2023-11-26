@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading;
 using UnityEngine.Video;
+using UnityEngine.Assertions.Must;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,13 +20,15 @@ public class PlayerController : MonoBehaviour
     public float _nexthit = 0f;
     public int hp = 10;
     public Slider healthBar, progressMeter;
-    public GameObject platTest1, platTest2, dialogue_box, blackoutSquare;
+    public GameObject platTest1, platTest2, dialogue_box, blackoutSquare, SkipCutsceneButton;
     Animator anim;
     public Color color1Player;
     public Color color2Player;
     public SpriteRenderer sr1;
-    public VideoPlayer vp1;
-    public GameObject Lvl1Cutscene1;
+    public VideoPlayer vp1, vp2, vp3;
+    //public GameObject Lvl1Cutscene1;
+    public GameObject MoralityCutsceneOpen, GoodMoralityChoiceCutscene, BadMoralityChoiceCutscene;
+    public Button goodChoiceButton, badChoiceButton;
 
     public Text dialogues, playerName, pauseText;
 
@@ -46,8 +49,21 @@ public class PlayerController : MonoBehaviour
         dialogue_box.SetActive(false);
         dialogues.text = "";
         pauseText.text = "";
-        vp1.enabled = true;
-        Lvl1Cutscene1.SetActive(true);
+        vp1.enabled = false;
+        vp1.gameObject.SetActive(false);
+
+        vp2.enabled = false;
+        vp2.gameObject.SetActive(false);
+
+        vp3.enabled = false;
+        vp3.gameObject.SetActive(false);
+        //Lvl1Cutscene1.SetActive(true);
+        //SkipCutsceneButton.SetActive(false); //will be set to true only if/when cutscene starts
+        //goodChoiceButton.enabled = false;
+        //badChoiceButton.enabled = false;
+        goodChoiceButton.gameObject.SetActive(false);
+        badChoiceButton.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -302,26 +318,60 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+        /*
         if(other.tag == "CutsceneStart")
         {
 
             Debug.Log("Cutscene should play here");
             Destroy(other.gameObject);
+            SkipCutsceneButton.SetActive(true);
 
-            StartCoroutine(Level1Cutscene1Wait());
+
+            //StartCoroutine(Level1Cutscene1Wait());
 
         }
+        */
 
         if(other.tag == "EndOfLevel")
         {
+            vp1.enabled = true;
+            vp1.gameObject.SetActive(true);
+            vp1.waitForFirstFrame = true;
             Debug.Log("You have beat the level!");
 
             win = true;
 
             //everything here gets disabled first
+            PauseGame();
 
             //cutscene plays here, signaling the end of the level.
+
+            MoralityCutsceneOpen.SetActive(true);
+            StartCoroutine(MoralityChoiceButtonSetActive());
+
+            
+            /*
+            if(goodChoiceButton == true)
+            {
+                vp1.enabled = false;
+                MoralityCutsceneOpen.SetActive(false);
+
+                vp2.enabled = true;
+                GoodMoralityChoiceCutscene.SetActive(true);
+                StartCoroutine(GoodChoiceCutsceneWait());
+            }
+
+            if(badChoiceButton == true)
+            {
+                vp1.enabled = false;
+                MoralityCutsceneOpen.SetActive(false);
+
+                vp3.enabled = true;
+                BadMoralityChoiceCutscene.SetActive(true);
+                StartCoroutine(BadChoiceCutsceneWait());
+
+            }
+            */
 
         }
 
@@ -343,7 +393,7 @@ public class PlayerController : MonoBehaviour
             //player takes 2 damage
             hp = (hp - 2);
 
-            Debug.Log("Player has been hit by a BigCar. That shit hurted.");
+            Debug.Log("Player has been hit by a BigCar. That hurt.");
         }
 
         else if (hp <= 0 || hp == 0)
@@ -400,27 +450,31 @@ public class PlayerController : MonoBehaviour
         }
 
         //after screen fully fades, respawn level
-        SceneManager.LoadScene(0);
+
+        //yield return new WaitForSecondsRealtime(3f);
+        SceneManager.LoadScene(1);
+        
+
 
     }
 
+    /*
     IEnumerator Level1Cutscene1Wait()
     {
-        gamePaused = true;
-        Time.timeScale = 0;
-        AudioListener.pause = true;
-        canMove = false;
-
+        SkipCutsceneButton.SetActive(true);
+        PauseGame();
+        
         Debug.Log("game has been paused for the opening cutscene");
         yield return new WaitForSecondsRealtime(61f);
         Lvl1Cutscene1.SetActive(false);
-        vp1.enabled = false;
-        gamePaused = false;
-        Time.timeScale = 1;
-        AudioListener.pause = false;
-        canMove = true;
-    }
 
+        ResumeGame();
+        SkipCutsceneButton.SetActive(false);
+        
+        
+        
+    }
+*/
     IEnumerator PlayerDamaged()
     {
 
@@ -450,6 +504,86 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    /*
+    public void SkipCutscene()
+    {
+        if(vp1 == enabled)
+        {
+            vp1.Stop();
+            Lvl1Cutscene1.SetActive(false);
+            Debug.Log("you have skipped the cutscene");
+            ResumeGame();
+            SkipCutsceneButton.SetActive(false);
+            //music1.Play();
+
+        }
+
+    }
+    */
+
+    IEnumerator MoralityChoiceButtonSetActive()
+    {
+        Debug.Log("IF YOU SEE ME, THINGS ARE GOOD");
+
+        yield return new WaitForSecondsRealtime(15f);
+
+        goodChoiceButton.gameObject.SetActive(true);
+        badChoiceButton.gameObject.SetActive(true);
+        goodChoiceButton.enabled = true;
+        badChoiceButton.enabled = true;
+        Debug.Log("Good choice button is set to: " + goodChoiceButton.enabled);
+        Debug.Log("bad choice button is set to: " + badChoiceButton.enabled);
+
+
+        Debug.Log("BUTTONS SHOULD BE SET ACTIVE HERE");
+
+
+    }
+
+    IEnumerator GoodChoiceCutsceneWait()
+    {
+
+        yield return new WaitForSecondsRealtime(17.572f);
+
+        //will go back to main menu, but for now will load level 2
+        SceneManager.LoadScene(2);
+    }
+
+
+    IEnumerator BadChoiceCutsceneWait()
+    {
+
+        yield return new WaitForSecondsRealtime(52.062f);
+
+        //will go back to main menu, but for now will load level 2
+        SceneManager.LoadScene(2);
+
+    }
+
+    public void OnGoodChoicePress()
+    {
+        vp1.gameObject.SetActive(false);
+        vp1.enabled = false;
+        MoralityCutsceneOpen.SetActive(false);
+
+        vp2.enabled = true;
+        vp2.gameObject.SetActive(true);
+        GoodMoralityChoiceCutscene.SetActive(true);
+        StartCoroutine(GoodChoiceCutsceneWait());
+    }
+
+    public void OnBadChoicePress()
+    {
+        vp1.enabled = false;
+        vp1.gameObject.SetActive(false);
+        MoralityCutsceneOpen.SetActive(false);
+
+        vp3.enabled = true;
+        vp3.gameObject.SetActive(true);
+        BadMoralityChoiceCutscene.SetActive(true);
+        StartCoroutine(BadChoiceCutsceneWait());
+
+    }
 }
         
 
