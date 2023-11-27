@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752471}
   - component: {fileID: 752472}
+  - component: {fileID: 752473}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (7)
   m_TagString: Untagged
@@ -179,6 +180,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &752473
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 752470}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &14311180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481090672}
   - component: {fileID: 481090673}
+  - component: {fileID: 481090674}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (10)
   m_TagString: Untagged
@@ -1134,6 +1184,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &481090674
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481090671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &483469341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483469342}
   - component: {fileID: 483469343}
+  - component: {fileID: 483469344}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (1)
   m_TagString: Untagged
@@ -1205,6 +1304,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &483469344
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483469341}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &517695530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,11 +1383,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f02331f0e524e4baee0cbb4d04743f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attkPunches: {fileID: 0}
   _playerSpeed: 0
   hSpeed: 3
   vSpeed: 3
   hp: 10
   healthBar: {fileID: 0}
+  Cooldown: 5
+  _nexthit: 0
   color1Player: {r: 0, g: 0, b: 0, a: 0}
   color2Player: {r: 0, g: 0, b: 0, a: 0}
   sr1: {fileID: 0}
@@ -1387,6 +1537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518718086}
   - component: {fileID: 518718087}
+  - component: {fileID: 518718088}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (Boss Beehive)
   m_TagString: Untagged
@@ -1449,6 +1600,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &518718088
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 518718085}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &537500714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 537500715}
   - component: {fileID: 537500716}
+  - component: {fileID: 537500717}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (3)
   m_TagString: Untagged
@@ -1520,6 +1720,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &537500717
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 537500714}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &587651413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 676544957}
   - component: {fileID: 676544958}
+  - component: {fileID: 676544959}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (5)
   m_TagString: Untagged
@@ -1739,6 +1988,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &676544959
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 676544956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &714645464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,6 +2153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775803592}
   - component: {fileID: 775803593}
+  - component: {fileID: 775803594}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (2)
   m_TagString: Untagged
@@ -1918,6 +2216,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &775803594
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775803591}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &800873759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,6 +2827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177728576}
   - component: {fileID: 1177728577}
+  - component: {fileID: 1177728578}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (8)
   m_TagString: Untagged
@@ -2543,6 +2890,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &1177728578
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177728575}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &1200806062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +3072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278460295}
   - component: {fileID: 1278460296}
+  - component: {fileID: 1278460297}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (9)
   m_TagString: Untagged
@@ -2739,6 +3135,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &1278460297
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1278460294}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &1285069527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4077,6 +4521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059309213}
   - component: {fileID: 2059309214}
+  - component: {fileID: 2059309215}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (6)
   m_TagString: Untagged
@@ -4139,6 +4584,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &2059309215
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2059309212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &2071676913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,6 +4641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071676914}
   - component: {fileID: 2071676915}
+  - component: {fileID: 2071676916}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103)
   m_TagString: Untagged
@@ -4210,6 +4704,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!60 &2071676916
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2071676913}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
 --- !u!1 &2072218055
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,6 +4761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2072218056}
   - component: {fileID: 2072218057}
+  - component: {fileID: 2072218058}
   m_Layer: 0
   m_Name: BeehiveSprite (88 X 103) (4)
   m_TagString: Untagged
@@ -4281,6 +4824,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+<<<<<<< Updated upstream
 --- !u!1 &2109795792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4484,3 +5028,53 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2115401349}
+=======
+--- !u!60 &2072218058
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072218055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.88, y: 1.03}
+    newSize: {x: 0.88, y: 1.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: 0.26}
+      - {x: 0.42, y: 0.39999998}
+      - {x: 0.42, y: 0.53999996}
+      - {x: 0.39, y: 0.59}
+      - {x: 0.35, y: 0.71}
+      - {x: 0.29, y: 0.77}
+      - {x: 0.26999998, y: 0.87}
+      - {x: 0.21, y: 0.93}
+      - {x: 0.07, y: 1.03}
+      - {x: -0.06, y: 1.03}
+      - {x: -0.099999994, y: 0.97999996}
+      - {x: -0.099999994, y: 0.91999996}
+      - {x: -0.21, y: 0.93}
+      - {x: -0.25, y: 0.89}
+      - {x: -0.32999998, y: 0.72999996}
+      - {x: -0.42, y: 0.53999996}
+      - {x: -0.42, y: 0.42}
+      - {x: -0.39, y: 0.37}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22, y: 0.19999999}
+      - {x: -0.22999999, y: 0.049999997}
+      - {x: -0.19999999, y: 0}
+      - {x: 0.17999999, y: 0}
+>>>>>>> Stashed changes
