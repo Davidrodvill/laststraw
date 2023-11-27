@@ -8,9 +8,9 @@ using System.Threading;
 using UnityEngine.Video;
 public class PlayerControllerLVL2 : MonoBehaviour {
 
-    public float _playerSpeed = 5f; //_playerSpeed is how fast the player moves
+    public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
-    public float hSpeed = 10f, vSpeed = 6f;
+    public float hSpeed = 3f, vSpeed = 3f;
     public int hp = 10;
     public Slider healthBar;
     Animator anim;
@@ -61,10 +61,12 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         if (canMove)
         {
             //4 directional movement (top-down)
-            if (Input.GetAxisRaw("Vertical") > 0 && pos.y < 0.98f) //up
+            if (Input.GetAxisRaw("Vertical") > 0 && pos.y < 0.96f) //up
             {
                 transform.position += new Vector3(0, vSpeed * Time.deltaTime);
                 moving = true;
+
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 0);
 
                 if(moving == true)
                 anim.SetBool("IsMoving", true);
@@ -77,11 +79,13 @@ public class PlayerControllerLVL2 : MonoBehaviour {
                 }
                 
             }
-            if (Input.GetAxisRaw("Vertical") < 0 && pos.y > 0.02f) //down
+            if (Input.GetAxisRaw("Vertical") < 0 && pos.y > 0.01f) //down
             {
                 facingDown = true;
                 transform.position -= new Vector3(0, vSpeed * Time.deltaTime);
                 moving = true;
+
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 180);
 
                 if (moving == true)
                 anim.SetBool("IsMoving", true);
@@ -97,11 +101,13 @@ public class PlayerControllerLVL2 : MonoBehaviour {
                 //if stops moving, set StopsFlying trigger here true
 
             }
-            if (Input.GetAxisRaw("Horizontal") > 0 && pos.x < 0.98f) //right
+            if (Input.GetAxisRaw("Horizontal") > 0 && pos.x < 0.96f) //right
             {
                 Debug.Log("D key has been pressed");
                 transform.position += new Vector3(hSpeed * Time.deltaTime, 0);
                 moving = true;
+
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 270);
 
                 if (moving == true)
                 anim.SetBool("IsMoving", true);
@@ -117,11 +123,12 @@ public class PlayerControllerLVL2 : MonoBehaviour {
                 //if we were facing left, flip
 
             }
-            if (Input.GetAxisRaw("Horizontal") < 0 && pos.x > 0.02f) //left
+            if (Input.GetAxisRaw("Horizontal") < 0 && pos.x > 0.01f) //left
             {
                 transform.position -= new Vector3(hSpeed * Time.deltaTime, 0);
                 moving = true;
 
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 90);
 
                 if (facingRight)
                 {
@@ -130,6 +137,25 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
                 }
 
+
+            }
+            if ((Input.GetKey(KeyCode.A)) && (Input.GetKey(KeyCode.S)))
+                {
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 135);
+            }
+            if((Input.GetKey(KeyCode.A)) && (Input.GetKey(KeyCode.W)))
+            {
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 45);
+
+            }
+            if((Input.GetKey(KeyCode.D)) && (Input.GetKey(KeyCode.W)))
+            {
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 315);
+
+            }
+            if((Input.GetKey(KeyCode.D)) && (Input.GetKey(KeyCode.S)))
+            {
+                transform.rotation = Quaternion.Euler(pos.x, pos.y, 225);
 
             }
 
