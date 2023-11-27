@@ -7,14 +7,12 @@ using UnityEngine.SceneManagement;
 using System.Threading;
 using UnityEngine.Video;
 public class PlayerControllerLVL2 : MonoBehaviour {
-    public GameObject attkPunches;
+
     public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
     public float hSpeed = 3f, vSpeed = 3f;
     public int hp = 10;
     public Slider healthBar;
-    public float Cooldown = 5f;
-    public float _nexthit = 0f;
     Animator anim;
     public Color color1Player;
     public Color color2Player;
@@ -195,12 +193,6 @@ public class PlayerControllerLVL2 : MonoBehaviour {
                 anim.SetBool("StopsFlying", true);
             }
             */
-        }
-        //Punch (J)
-        if (Input.GetKeyDown(KeyCode.J) && (Time.time > _nexthit))
-        {
-            
-            _nexthit = Time.time + Cooldown; //coldown timer add
         }
     }
 

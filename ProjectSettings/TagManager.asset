@@ -10,7 +10,6 @@ TagManager:
   - CarDestroy
   - EndOfLevel
   - CutsceneStart
-  - AttkPunch
   layers:
   - Default
   - TransparentFX
