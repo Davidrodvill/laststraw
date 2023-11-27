@@ -17,12 +17,9 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public Color color1Player;
     public Color color2Player;
     public SpriteRenderer sr1;
-    public GameObject pauseTextBox;
 
     public Text pauseText;
     Rigidbody2D rb2d; // reference to RigidBody2d
-
-    public Button mainMenuButton;
 
     public bool moving = false, facingRight, facingLeft, facingUp, facingDown;
     
@@ -30,19 +27,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        mainMenuButton.gameObject.SetActive(false);
-        pauseText.text = "";
-
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        pauseTextBox.SetActive(false);
-
-       
-    }
-	
-    void Update()
-    {
-
         if (Input.GetKeyDown(KeyCode.Escape) && !gamePaused) //pauses game
         {
 
@@ -58,7 +44,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
         }
     }
-
+	
 	// Update is called once per frame
 	void FixedUpdate () {
         Vector3 pos = Camera.main.WorldToViewportPoint(
@@ -198,32 +184,21 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
     void PauseGame()
     {
-        pauseTextBox.SetActive(true);
         gamePaused = true;
         Time.timeScale = 0;
         pauseText.text = "PAUSED";
         AudioListener.pause = true;
         canMove = false;
-        mainMenuButton.gameObject.SetActive(true);
 
     }
 
     void ResumeGame()
     {
-        pauseTextBox.SetActive(false);
         gamePaused = false;
         Time.timeScale = 1;
         pauseText.text = "";
         AudioListener.pause = false;
         canMove = true;
-        mainMenuButton.gameObject.SetActive(false);
-
-    }
-
-    public void OnMainMenuButtonPress()
-    {
-        //game should quit to main menu
-        SceneManager.LoadScene(3);
 
     }
 }
