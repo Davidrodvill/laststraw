@@ -28,13 +28,13 @@ public class PlayerController : MonoBehaviour
     public VideoPlayer vp1, vp2, vp3;
     //public GameObject Lvl1Cutscene1;
     public GameObject MoralityCutsceneOpen, GoodMoralityChoiceCutscene, BadMoralityChoiceCutscene;
-    public Button goodChoiceButton, badChoiceButton;
+    public Button goodChoiceButton, badChoiceButton, mainMenuButton;
 
-    public Text dialogues, playerName, pauseText;
+    public Text dialogues, playerName, pauseText, levelUnlock;
 
     public bool moving = false;
     public bool faceRight = true;
-    public bool canMove = true, die = false, win = false, gamePaused;
+    public bool canMove = true, die = false, win = false, gamePaused, level2Unlock;
 
 
 
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         dialogue_box.SetActive(false);
         dialogues.text = "";
         pauseText.text = "";
+        levelUnlock.text = "";
         vp1.enabled = false;
         vp1.gameObject.SetActive(false);
 
@@ -57,6 +58,8 @@ public class PlayerController : MonoBehaviour
 
         vp3.enabled = false;
         vp3.gameObject.SetActive(false);
+
+        mainMenuButton.gameObject.SetActive(false);
         //Lvl1Cutscene1.SetActive(true);
         //SkipCutsceneButton.SetActive(false); //will be set to true only if/when cutscene starts
         //goodChoiceButton.enabled = false;
@@ -338,11 +341,12 @@ public class PlayerController : MonoBehaviour
             vp1.gameObject.SetActive(true);
             vp1.waitForFirstFrame = true;
             Debug.Log("You have beat the level!");
-
+            level2Unlock = true;
             win = true;
 
             //everything here gets disabled first
             PauseGame();
+            
 
             //cutscene plays here, signaling the end of the level.
 
@@ -491,6 +495,8 @@ public class PlayerController : MonoBehaviour
         pauseText.text = "PAUSED";
         AudioListener.pause = true;
         canMove = false;
+        mainMenuButton.gameObject.SetActive(true);
+
 
     }
 
@@ -501,6 +507,7 @@ public class PlayerController : MonoBehaviour
         pauseText.text = "";
         AudioListener.pause = false;
         canMove = true;
+        mainMenuButton.gameObject.SetActive(false);
 
     }
 
@@ -544,9 +551,16 @@ public class PlayerController : MonoBehaviour
     {
 
         yield return new WaitForSecondsRealtime(17.572f);
+        //yield return new WaitForSecondsRealtime(18f);
+        //yield return new WaitForSecondsRealtime(23f);
 
+        levelUnlock.text = "Level 2 Has Been Unlocked.";
+
+
+        yield return new WaitForSecondsRealtime(5f);
         //will go back to main menu, but for now will load level 2
-        SceneManager.LoadScene(2);
+        ResumeGame();
+        SceneManager.LoadSceneAsync(2);
     }
 
 
@@ -554,9 +568,15 @@ public class PlayerController : MonoBehaviour
     {
 
         yield return new WaitForSecondsRealtime(52.062f);
+        //yield return new WaitForSecondsRealtime(52f);
+        //yield return new WaitForSecondsRealtime(57f);
 
+        levelUnlock.text = "Level 2 Has Been Unlocked.";
+
+        yield return new WaitForSecondsRealtime(5f);
         //will go back to main menu, but for now will load level 2
-        SceneManager.LoadScene(2);
+        ResumeGame();
+        SceneManager.LoadSceneAsync(2);
 
     }
 
@@ -582,6 +602,13 @@ public class PlayerController : MonoBehaviour
         vp3.gameObject.SetActive(true);
         BadMoralityChoiceCutscene.SetActive(true);
         StartCoroutine(BadChoiceCutsceneWait());
+
+    }
+
+    public void OnMainMenuButtonPress()
+    {
+        //game should quit to main menu
+        SceneManager.LoadScene(3);
 
     }
 }
