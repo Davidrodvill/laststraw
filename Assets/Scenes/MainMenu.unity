@@ -567,8 +567,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.1
-  m_Text: 'Inspired by her mother, Ms. Guidance and her older sister, Miss Fit, Miss
-    Bee Have '
+  m_Text: 'Miss Bee Have comes from a large family of supervillains, most notably
+    being her mother, Miss Guidance, and her older sister, Ms. Fit. '
 --- !u!222 &95039660
 CanvasRenderer:
   m_ObjectHideFlags: 0
