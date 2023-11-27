@@ -18,7 +18,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public Color color2Player;
     public SpriteRenderer sr1;
     public GameObject pauseTextBox;
-
+    public float Cooldown = 1f;
+    public float _nexthit = 0f;
     public Text pauseText;
     Rigidbody2D rb2d; // reference to RigidBody2d
 
@@ -181,18 +182,13 @@ public class PlayerControllerLVL2 : MonoBehaviour {
             }
 
 
-            //when player stops moving (lets go of the key), set moving = false
-            /*
-            if (Input.GetKeyUp(KeyCode.D) || (Input.GetKeyUp(KeyCode.A)) || (Input.GetKeyUp(KeyCode.W)) || (Input.GetKeyUp(KeyCode.S)))
-            {
-                Debug.Log("all keys has been let go");
-                moving = false;
+           
+        }
+        //Punch (J)
+        if (Input.GetKeyDown(KeyCode.J) && (Time.time > _nexthit))
+        {
 
-                anim.SetBool("StartsFlying", false);
-                anim.SetBool("IsMoving", false);
-                anim.SetBool("StopsFlying", true);
-            }
-            */
+            _nexthit = Time.time + Cooldown; //coldown timer add
         }
     }
 
