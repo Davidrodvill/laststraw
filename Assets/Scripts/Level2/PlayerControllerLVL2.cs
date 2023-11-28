@@ -17,7 +17,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public Color color1Player;
     public Color color2Player;
     public SpriteRenderer sr1;
-    public GameObject pauseTextBox, atkPunches;
+    public GameObject pauseTextBox; //atkPunches;
     public Transform punchSpawner;
     public float Cooldown = 0.5f;
     public float _nexthit = 0f;
@@ -188,6 +188,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
            
         }
+        /*
         //Punch (J)
         if (Input.GetKeyDown(KeyCode.J) && (Time.time > _nexthit))
         {
@@ -196,6 +197,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
             
             _nexthit = Time.time + Cooldown; //coldown timer add
         }
+        */
     }
 
     void PauseGame()

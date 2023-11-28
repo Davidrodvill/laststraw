@@ -108,139 +108,11 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &752470
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 752471}
-  - component: {fileID: 752472}
-  - component: {fileID: 752473}
-  - component: {fileID: 752474}
-  m_Layer: 0
-  m_Name: BeehiveSprite (88 X 103) (7)
-  m_TagString: Hives
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &752471
+--- !u!4 &752471 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.19, y: -2.64, z: 0}
-  m_LocalScale: {x: 0.79477, y: 0.79477, z: 0.79477}
-  m_Children: []
-  m_Father: {fileID: 665167307}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &752472
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752470}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -449926263
-  m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ac0bf8ea0b930544aecaa8c5e13261b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.88, y: 1.03}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!114 &752473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 440790d58d245fc4da6640f5173a1060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beehivehp: 4
---- !u!60 &752474
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 752470}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.88, y: 1.03}
-    newSize: {x: 0.88, y: 1.03}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.34, y: 0.26}
-      - {x: 0.42, y: 0.39999998}
-      - {x: 0.42, y: 0.53999996}
-      - {x: 0.39, y: 0.59}
-      - {x: 0.35, y: 0.71}
-      - {x: 0.29, y: 0.77}
-      - {x: 0.26999998, y: 0.87}
-      - {x: 0.21, y: 0.93}
-      - {x: 0.07, y: 1.03}
-      - {x: -0.06, y: 1.03}
-      - {x: -0.099999994, y: 0.97999996}
-      - {x: -0.099999994, y: 0.91999996}
-      - {x: -0.21, y: 0.93}
-      - {x: -0.25, y: 0.89}
-      - {x: -0.32999998, y: 0.72999996}
-      - {x: -0.42, y: 0.53999996}
-      - {x: -0.42, y: 0.42}
-      - {x: -0.39, y: 0.37}
-      - {x: -0.35, y: 0.25}
-      - {x: -0.29, y: 0.19}
-      - {x: -0.22, y: 0.19999999}
-      - {x: -0.22999999, y: 0.049999997}
-      - {x: -0.19999999, y: 0}
-      - {x: 0.17999999, y: 0}
+  m_PrefabParentObject: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2,
+    type: 2}
+  m_PrefabInternal: {fileID: 462287962}
 --- !u!1 &14311180
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +359,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1522765}
   m_EdgeRadius: 0
+--- !u!224 &140191936 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016045212}
 --- !u!1 &155572561
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +418,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1522765}
   m_EdgeRadius: 0
+--- !u!1 &182840077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 182840078}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &182840078
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 182840077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.094, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 517695533}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204241850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +922,48 @@ Transform:
   m_Father: {fileID: 1285069528}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &462287962
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 665167307}
+    m_Modifications:
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493434989459528, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &463524360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,13 +1083,13 @@ GameObject:
   - component: {fileID: 481090673}
   - component: {fileID: 481090674}
   - component: {fileID: 481090675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (10)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481090672
 Transform:
   m_ObjectHideFlags: 0
@@ -1210,6 +1157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &481090675
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1269,13 +1221,13 @@ GameObject:
   - component: {fileID: 483469343}
   - component: {fileID: 483469344}
   - component: {fileID: 483469345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (1)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &483469342
 Transform:
   m_ObjectHideFlags: 0
@@ -1343,6 +1295,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &483469345
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1401,6 +1358,7 @@ GameObject:
   - component: {fileID: 517695533}
   - component: {fileID: 517695532}
   - component: {fileID: 517695531}
+  - component: {fileID: 517695537}
   - component: {fileID: 517695534}
   - component: {fileID: 517695535}
   - component: {fileID: 517695536}
@@ -1430,9 +1388,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   color1Player: {r: 0, g: 0, b: 0, a: 0}
   color2Player: {r: 0, g: 0, b: 0, a: 0}
-  sr1: {fileID: 0}
+  sr1: {fileID: 517695532}
   pauseTextBox: {fileID: 1098015457}
-  atkPunches: {fileID: 1276747542258302, guid: e32c3ef4f74f2ae4b8601945d56b24ab, type: 2}
   punchSpawner: {fileID: 2112956607}
   Cooldown: 0.5
   _nexthit: 0
@@ -1500,6 +1457,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 2112956607}
+  - {fileID: 182840078}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1570,6 +1528,24 @@ PolygonCollider2D:
       - {x: 0.024999999, y: -0.03}
       - {x: 0.055, y: -0.01}
       - {x: 0.055, y: 0.06}
+--- !u!114 &517695537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 517695530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee3d87c57a78884e9e68b27f1872850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 182840078}
+  attackRange: 0.17
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackDamage: 5
+  attackRate: 2
 --- !u!1 &518718085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,13 +1557,13 @@ GameObject:
   - component: {fileID: 518718087}
   - component: {fileID: 518718088}
   - component: {fileID: 518718089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (Boss Beehive)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &518718086
 Transform:
   m_ObjectHideFlags: 0
@@ -1655,6 +1631,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &518718089
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1714,13 +1695,13 @@ GameObject:
   - component: {fileID: 537500716}
   - component: {fileID: 537500717}
   - component: {fileID: 537500718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (3)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &537500715
 Transform:
   m_ObjectHideFlags: 0
@@ -1788,6 +1769,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &537500718
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1995,13 +1981,13 @@ GameObject:
   - component: {fileID: 676544958}
   - component: {fileID: 676544959}
   - component: {fileID: 676544960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (5)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &676544957
 Transform:
   m_ObjectHideFlags: 0
@@ -2069,6 +2055,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &676544960
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2236,13 +2227,13 @@ GameObject:
   - component: {fileID: 775803593}
   - component: {fileID: 775803594}
   - component: {fileID: 775803595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (2)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &775803592
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,6 +2301,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &775803595
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2923,13 +2919,13 @@ GameObject:
   - component: {fileID: 1177728577}
   - component: {fileID: 1177728578}
   - component: {fileID: 1177728579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (8)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1177728576
 Transform:
   m_ObjectHideFlags: 0
@@ -2997,6 +2993,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &1177728579
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3181,13 +3182,13 @@ GameObject:
   - component: {fileID: 1278460296}
   - component: {fileID: 1278460297}
   - component: {fileID: 1278460298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (9)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1278460295
 Transform:
   m_ObjectHideFlags: 0
@@ -3255,6 +3256,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &1278460298
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4578,6 +4584,125 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1522765}
   m_EdgeRadius: 0
+--- !u!1001 &2016045212
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2109795796}
+    m_Modifications:
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -133.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -106
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224301262278465574, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408541444625260, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_HandleRect
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 224681091424659756, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224681091424659756, guid: 82eb7946a292b354d99205226b2d0c4c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147016144423732, guid: 82eb7946a292b354d99205226b2d0c4c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 82eb7946a292b354d99205226b2d0c4c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2044004200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,13 +4768,13 @@ GameObject:
   - component: {fileID: 2059309214}
   - component: {fileID: 2059309215}
   - component: {fileID: 2059309216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (6)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2059309213
 Transform:
   m_ObjectHideFlags: 0
@@ -4717,6 +4842,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &2059309216
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4776,13 +4906,13 @@ GameObject:
   - component: {fileID: 2071676915}
   - component: {fileID: 2071676916}
   - component: {fileID: 2071676917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2071676914
 Transform:
   m_ObjectHideFlags: 0
@@ -4850,6 +4980,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &2071676917
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4909,13 +5044,13 @@ GameObject:
   - component: {fileID: 2072218057}
   - component: {fileID: 2072218058}
   - component: {fileID: 2072218059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeehiveSprite (88 X 103) (4)
   m_TagString: Hives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2072218056
 Transform:
   m_ObjectHideFlags: 0
@@ -4983,6 +5118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beehivehp: 4
+  healthBar: {fileID: 0}
+  healthbarPos: {fileID: 0}
+  color1Player: {r: 0, g: 0, b: 0, a: 0}
+  color2Player: {r: 0, g: 0, b: 0, a: 0}
+  sr1: {fileID: 0}
 --- !u!60 &2072218059
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5119,6 +5259,7 @@ RectTransform:
   - {fileID: 1098015458}
   - {fileID: 1704960826}
   - {fileID: 261310522}
+  - {fileID: 140191936}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5141,7 +5282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2112956607
 Transform:
   m_ObjectHideFlags: 0

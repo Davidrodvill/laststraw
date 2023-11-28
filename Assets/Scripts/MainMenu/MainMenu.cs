@@ -48,10 +48,8 @@ public class MainMenu : MonoBehaviour {
 
 	public void OnLevel2Select()
 	{
+        SceneManager.LoadScene(2);
 
-        //if level 2 is selected, AND level 1 has been completed, level 2 will load
-
-        //if level 2 is selected, and level 1 has NOT been completed, level 2 will not load and a message will show.
     }
 
 
