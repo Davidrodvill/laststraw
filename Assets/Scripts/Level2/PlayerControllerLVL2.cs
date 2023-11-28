@@ -160,6 +160,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
             if ((Input.GetKey(KeyCode.A)) && (Input.GetKey(KeyCode.S)))
                 {
                 transform.rotation = Quaternion.Euler(pos.x, pos.y, 135);
+                
             }
             if((Input.GetKey(KeyCode.A)) && (Input.GetKey(KeyCode.W)))
             {
@@ -190,7 +191,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         //Punch (J)
         if (Input.GetKeyDown(KeyCode.J) && (Time.time > _nexthit))
         {
-            Instantiate(atkPunches.gameObject, punchSpawner.position, Quaternion.identity);
+            
+            Instantiate(atkPunches.gameObject, transform.position, transform.rotation);
             
             _nexthit = Time.time + Cooldown; //coldown timer add
         }
