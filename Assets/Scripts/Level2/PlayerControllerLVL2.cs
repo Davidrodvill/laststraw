@@ -10,15 +10,16 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
     public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
-    public float hSpeed = 3f, vSpeed = 3f;
+    public float hSpeed = 3f, vSpeed = 3f, punchSpeed = 1f;
     public int hp = 10;
     public Slider healthBar;
     Animator anim;
     public Color color1Player;
     public Color color2Player;
     public SpriteRenderer sr1;
-    public GameObject pauseTextBox;
-    public float Cooldown = 1f;
+    public GameObject pauseTextBox, atkPunches;
+    public Transform punchSpawner;
+    public float Cooldown = 0.5f;
     public float _nexthit = 0f;
     public Text pauseText;
     Rigidbody2D rb2d; // reference to RigidBody2d
@@ -30,6 +31,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public bool canMove = true, die = false, win = false, gamePaused;
     // Use this for initialization
     void Start () {
+
+        
 
         mainMenuButton.gameObject.SetActive(false);
         pauseText.text = "";
@@ -187,7 +190,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         //Punch (J)
         if (Input.GetKeyDown(KeyCode.J) && (Time.time > _nexthit))
         {
-
+            Instantiate(atkPunches.gameObject, punchSpawner.position, Quaternion.identity);
+            
             _nexthit = Time.time + Cooldown; //coldown timer add
         }
     }

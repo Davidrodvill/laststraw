@@ -11,6 +11,8 @@ TagManager:
   - EndOfLevel
   - CutsceneStart
   - AttkPunch
+  - Barriers
+  - Hives
   layers:
   - Default
   - TransparentFX
