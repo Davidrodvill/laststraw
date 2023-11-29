@@ -561,7 +561,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         //will go back to main menu, but for now will load level 2
         ResumeGame();
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(4);
     }
 
 
@@ -577,7 +577,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         //will go back to main menu, but for now will load level 2
         ResumeGame();
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(4);
 
     }
 

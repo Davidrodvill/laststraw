@@ -14,6 +14,7 @@ TagManager:
   - Barriers
   - Hives
   - Bees
+  - BossBee
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
     public float hSpeed = 3f, vSpeed = 3f, punchSpeed = 1f;
-    public int hp = 100, onemores;
+    public int hp = 100, onemores, numOfHivesLeft = 13;
     public Transform healthBarPos;
     public Slider healthBar;
     Animator anim;
@@ -24,10 +24,11 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public float _nexthit = 0f;
     public Text pauseText;
     Rigidbody2D rb2d; // reference to RigidBody2d
-    EnemyController enemyController;
-    
-
-    public Button mainMenuButton;
+    public EnemyController enemyController;
+    public VideoPlayer vp1, vp2, vp3;
+    public GameObject MoralityCutsceneOpen, GoodMoralityChoiceCutscene, BadMoralityChoiceCutscene;
+    public Button goodChoiceButton, badChoiceButton, mainMenuButton;
+    //public bool bossKilled = false; //In order to use this, youll need to create a new EnemyController script for the boss
 
     public bool moving = false, facingRight, facingLeft, facingUp, facingDown;
     
@@ -35,6 +36,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+        numOfHivesLeft = 13;
         GameObject hb = Instantiate(healthBar.gameObject);
         //put the healthbar on the canvas
         hb.transform.SetParent(GameObject.Find("Canvas").transform);
@@ -45,9 +47,26 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        pauseTextBox.SetActive(false);
 
-       
+        pauseTextBox.SetActive(false);
+        goodChoiceButton.gameObject.SetActive(false);
+        badChoiceButton.gameObject.SetActive(false);
+
+        
+        BadMoralityChoiceCutscene.SetActive(true);
+
+        /*
+        vp1.enabled = false;
+        vp1.gameObject.SetActive(false);
+
+        vp2.enabled = false;
+        vp2.gameObject.SetActive(false);
+
+        vp3.enabled = false;
+        vp3.gameObject.SetActive(false);
+        */
+        
+
     }
 	
     void Update()
@@ -56,6 +75,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         healthBar.transform.position = Camera.main.WorldToScreenPoint(healthBarPos.transform.position);
         healthBar.value = hp;
 
+        
 
         if (Input.GetKeyDown(KeyCode.Escape) && !gamePaused) //pauses game
         {
@@ -75,6 +95,9 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        
+
         Vector3 pos = Camera.main.WorldToViewportPoint(
             transform.position);
 
@@ -206,23 +229,47 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         {
             TakeDamage(enemyController.attackDamage);
 
+            //hp -= enemyController.attackDamage;
 
         }
 
+        if(other.tag == "BossBee")
+        {
+            TakeDamage(enemyController.attackDamage);
+
+
+        }
 
     }
 
-    public void OneHiveDestroyed(int hivesdestroyed)
+    
+    public void OneHiveDestroyed()
     {
+        numOfHivesLeft--;
         Debug.Log("A hive down");
-        onemores += hivesdestroyed;
+        //onemores += hivesdestroyed;
 
-        if (onemores == 13)
+        if (numOfHivesLeft <= 0)
         {
             //win game
             Debug.Log("all 13 hives down");
+            
+            vp1.enabled = true;
+            vp1.gameObject.SetActive(true);            //////////////////////////////////////////
+            vp1.waitForFirstFrame = true;
+            Debug.Log("You have beat the level!");
+
+            //cutscene plays here, signaling the end of the level.
+
+            MoralityCutsceneOpen.SetActive(true);
+            StartCoroutine(MoralityChoiceButtonSetActive());
+            
         }
+
+        
     }
+    
+
     void PauseGame()
     {
         pauseTextBox.SetActive(true);
@@ -244,6 +291,10 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         AudioListener.pause = false;
         canMove = true;
         mainMenuButton.gameObject.SetActive(false);
+
+        //PauseGame();
+
+        
 
     }
 
@@ -277,5 +328,61 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         sr1.color = color1Player;
 
     }
+
+
+
+    IEnumerator MoralityChoiceButtonSetActive()
+    {
+        Debug.Log("IF YOU SEE ME, THINGS ARE GOOD");
+
+        yield return new WaitForSecondsRealtime(22.887f);
+
+        
+        goodChoiceButton.gameObject.SetActive(true);
+        badChoiceButton.gameObject.SetActive(true);
+        goodChoiceButton.enabled = true; ///////////////////////////////////////////////////////////////
+        badChoiceButton.enabled = true;
+        Debug.Log("Good choice button is set to: " + goodChoiceButton.enabled);
+        Debug.Log("bad choice button is set to: " + badChoiceButton.enabled);
+
+
+        Debug.Log("BUTTONS SHOULD BE SET ACTIVE HERE");
+        
+
+    }
+
+    IEnumerator GoodChoiceCutsceneWait()
+    {
+
+        yield return new WaitForSecondsRealtime(8.627f);
+        //yield return new WaitForSecondsRealtime(18f);
+        //yield return new WaitForSecondsRealtime(23f);
+
+        //levelUnlock.text = "Level 2 Has Been Unlocked.";
+
+
+        yield return new WaitForSecondsRealtime(2f);
+        //will go back to main menu, but for now will load level 2
+        ResumeGame();
+        SceneManager.LoadSceneAsync(3);
+    }
+
+
+    IEnumerator BadChoiceCutsceneWait()
+    {
+
+        yield return new WaitForSecondsRealtime(11.437f);
+        //yield return new WaitForSecondsRealtime(52f);
+        //yield return new WaitForSecondsRealtime(57f);
+
+        //levelUnlock.text = "Level 2 Has Been Unlocked.";
+
+        yield return new WaitForSecondsRealtime(2f);
+        //will go back to main menu, but for now will load level 2
+        ResumeGame();
+        SceneManager.LoadSceneAsync(3);
+
+    }
+
 
 }

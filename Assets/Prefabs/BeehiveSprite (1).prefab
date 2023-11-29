@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669588423024146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.19, y: -2.64, z: 0}
+  m_LocalPosition: {x: -2.49, y: -6.64, z: 0}
   m_LocalScale: {x: 0.79477, y: 0.79477, z: 0.79477}
   m_Children:
   - {fileID: 4168354178569006}
@@ -137,6 +137,8 @@ MonoBehaviour:
   color1Player: {r: 1, g: 1, b: 1, a: 1}
   color2Player: {r: 0.6544118, g: 0, b: 0, a: 1}
   sr1: {fileID: 212369338248176210}
+  playercontlvl2: {fileID: 114991186947553968, guid: 3bbfac6a587d9e04eb634304b07ccdc3,
+    type: 2}
 --- !u!212 &212369338248176210
 SpriteRenderer:
   m_ObjectHideFlags: 1

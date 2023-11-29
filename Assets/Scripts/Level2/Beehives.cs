@@ -16,6 +16,8 @@ public class Beehives : MonoBehaviour
     public SpriteRenderer sr1;
     int hivedown = 1;
     public PlayerControllerLVL2 playercontlvl2;
+  
+    
 
     // Use this for initialization
     void Start()
@@ -24,6 +26,7 @@ public class Beehives : MonoBehaviour
         //put the healthbar on the canvas
         hb.transform.SetParent(GameObject.Find("Canvas").transform);
         healthBar = hb.GetComponent<Slider>();
+        
         
     }
 
@@ -38,11 +41,24 @@ public class Beehives : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (beehivehp <= 0)
         {
-            GetComponent<PlayerControllerLVL2>().OneHiveDestroyed(hivedown + 1);
+            //GetComponent<PlayerControllerLVL2>().OneHiveDestroyed(hivedown + 1);
+            
+            playercontlvl2.GetComponent<PlayerControllerLVL2>().OneHiveDestroyed();
+            Debug.Log("Number of hives left: " + playercontlvl2.numOfHivesLeft);
+            
+
             Destroy(gameObject);
+            Destroy(healthBar.gameObject);
+
+            /*
+            GetComponent<PlayerControllerLVL2>().OneHiveDestroyed();
+            Debug.Log("Number of hives left: " + GetComponent<PlayerControllerLVL2>().numOfHivesLeft);
+            */
         }
+
     }
     
     IEnumerator waitsomeSeconds()
@@ -58,13 +74,16 @@ public class Beehives : MonoBehaviour
         beehivehp -= damage;
 
         StartCoroutine(BeehiveHit());
-
+        /*
         if(beehivehp <= 0)
         {
+            //GetComponent<PlayerControllerLVL2>().OneHiveDestroyed(hivedown + 1);
+            playercontlvl2.GetComponent<PlayerControllerLVL2>().numOfHivesLeft--;
+            Debug.Log("Number of hives left: " + playercontlvl2.numOfHivesLeft);
             Destroy(gameObject);
             Destroy(healthBar.gameObject);
         }
-
+        */
     }
 
     IEnumerator BeehiveHit()
