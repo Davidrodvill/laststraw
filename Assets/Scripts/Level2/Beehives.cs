@@ -40,18 +40,7 @@ public class Beehives : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        /*
-        if (other.tag == "AttkPunch")
-        {
-            beehivehp--;
-            gameObject.transform.localScale += new Vector3(1, 1);
-            StartCoroutine(waitsomeSeconds());
-            gameObject.transform.localScale -= new Vector3(1, 1);
-        }
-        */
-    }
+    
     IEnumerator waitsomeSeconds()
     {
         yield return new WaitForSeconds(0.5f);

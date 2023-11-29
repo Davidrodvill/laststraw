@@ -86,6 +86,7 @@ public class PlayerCombat : MonoBehaviour {
 			//aud.PlayOneShot(punchSound);
 			//enemy.GetComponent<BrawlerEnemy>().TakeDamage(attackDamage);
 			enemy.GetComponent<Beehives>().TakeDamage(attackDamage);
+			
 		}
 
 	}
