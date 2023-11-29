@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float jump = 200;
     public float Cooldown = 5f;
     public float _nexthit = 0f;
+    public float progressValue = 0.01f;
     public int hp = 10;
     public Slider healthBar, progressMeter;
     public GameObject platTest1, platTest2, dialogue_box, blackoutSquare, SkipCutsceneButton;
@@ -148,7 +149,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("StopsFlying", false);
 
                 //progress meter
-                progressMeter.value += 0.072f;
+                progressMeter.value += progressValue;
                
 
                 //if we were facing left, flip
@@ -169,7 +170,7 @@ public class PlayerController : MonoBehaviour
 
                 //if stops moving, set StopsFlying trigger here true
                 //progress meter
-                progressMeter.value -= 0.072f;
+                progressMeter.value -= progressValue;
 
                 //if we were facing right, flip
                 if (faceRight)
