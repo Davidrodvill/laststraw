@@ -11,7 +11,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
     public float hSpeed = 3f, vSpeed = 3f, punchSpeed = 1f;
-    public int hp = 10;
+    public int hp = 10, onemores;
     public Slider healthBar;
     Animator anim;
     public Color color1Player;
@@ -190,7 +190,16 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         }
         
     }
-
+    public void OneHiveDestroyed(int hivesdestroyed)
+    {
+        Debug.Log("A hive down");
+        onemores += hivesdestroyed;
+        if (onemores == 13)
+        {
+            //win game
+            Debug.Log("all 13 hives down");
+        }
+    }
     void PauseGame()
     {
         pauseTextBox.SetActive(true);

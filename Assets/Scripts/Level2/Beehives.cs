@@ -14,6 +14,7 @@ public class Beehives : MonoBehaviour
     public Color color1Player; //should be normal
     public Color color2Player; //should be red (switch to this color after enemy gets hit)
     public SpriteRenderer sr1;
+    int hivedown = 1;
 
     // Use this for initialization
     void Start()
@@ -22,6 +23,7 @@ public class Beehives : MonoBehaviour
         //put the healthbar on the canvas
         hb.transform.SetParent(GameObject.Find("Canvas").transform);
         healthBar = hb.GetComponent<Slider>();
+        
     }
 
     void Update()
@@ -37,6 +39,7 @@ public class Beehives : MonoBehaviour
     {
         if (beehivehp <= 0)
         {
+            GetComponent<PlayerControllerLVL2>().OneHiveDestroyed(hivedown + 1);
             Destroy(gameObject);
         }
     }
@@ -47,7 +50,7 @@ public class Beehives : MonoBehaviour
 
     }
 
-
+    
     public void TakeDamage(int damage)
     {
         Debug.Log("Hive has been attacked");
