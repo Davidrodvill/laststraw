@@ -15,6 +15,7 @@ public class Beehives : MonoBehaviour
     public Color color2Player; //should be red (switch to this color after enemy gets hit)
     public SpriteRenderer sr1;
     int hivedown = 1;
+    public PlayerControllerLVL2 playercontlvl2;
 
     // Use this for initialization
     void Start()

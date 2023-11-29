@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
 	public GameObject pointA, pointB;
 	private Rigidbody2D rb2d;
 	public int beehp = 20;
+    public int attackDamage = 5;
     public Slider healthBar;
     public Transform healthbarPos;
     public Color color1Player; //should be normal
@@ -17,8 +18,15 @@ public class EnemyController : MonoBehaviour {
     public SpriteRenderer sr1;
     private Transform currentPoint;
 	public float _beespeed;
-	// Use this for initialization
-	void Start () {
+
+    /*
+    public Vector3 attackOffset;
+    public float attackRange = 1f;
+    public LayerMask attackMask;
+    */
+
+    // Use this for initialization
+    void Start () {
 		rb2d = GetComponent<Rigidbody2D>();
 		currentPoint = pointB.transform;
 		flip();
@@ -58,6 +66,8 @@ public class EnemyController : MonoBehaviour {
         }
 
     }
+
+    
 
 	void FixedUpdate()
 	{
@@ -106,4 +116,34 @@ public class EnemyController : MonoBehaviour {
 		Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
 		Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
 	}
+
+    /*
+    public void Attack()
+    {
+
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+
+        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+        if (colInfo != null)
+        {
+            colInfo.GetComponent<PlayerControllerLVL2>().TakeDamage(attackDamage);
+            //aud.PlayOneShot(punchSound);
+        }
+        Debug.Log("Enemy has attacked");
+    }
+    */
+
+    /*
+    void OnDrawGizmosSelected()
+    {
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+
+        Gizmos.DrawWireSphere(pos, attackRange);
+
+    }
+    */
 }

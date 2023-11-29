@@ -42,13 +42,13 @@ public class MainMenu : MonoBehaviour {
 	{
 		//if level 1 is selected, level 1 will load
 
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(0); //goes to level1 cutscene
 
 	}
 
 	public void OnLevel2Select()
 	{
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4); //goes to level2 cutscene
 
     }
 

@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour {
 	//public Animator animator;
 	public Transform attackPoint;
 	public float attackRange = 0.5f;
-	public LayerMask enemyLayers;
+	public LayerMask enemyLayers1, enemyLayers2;
 	public static bool canAttack = true;
 	//public AudioSource aud;
 	//public AudioClip punchSound, whiffSound;
@@ -77,16 +77,24 @@ public class PlayerCombat : MonoBehaviour {
 		//animator.SetTrigger("Attack");
 		//aud.PlayOneShot(whiffSound);
 		//Detect enemies in range of attack
-		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers1);
+        Collider2D[] hitEnemies2 = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers1);
 
 
-		//damage them
-		foreach(Collider2D enemy in hitEnemies)
+        //damage them
+        foreach (Collider2D enemy in hitEnemies)
 		{
 			//aud.PlayOneShot(punchSound);
 			//enemy.GetComponent<BrawlerEnemy>().TakeDamage(attackDamage);
 			enemy.GetComponent<Beehives>().TakeDamage(attackDamage);
 			
+		}
+
+		foreach (Collider2D enemy in hitEnemies2)
+		{
+
+			enemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
+			Debug.Log("bee has been attacked");
 		}
 
 	}

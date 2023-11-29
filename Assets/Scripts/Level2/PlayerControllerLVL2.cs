@@ -11,7 +11,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
     public float hSpeed = 3f, vSpeed = 3f, punchSpeed = 1f;
-    public int hp = 10, onemores;
+    public int hp = 100, onemores;
+    public Transform healthBarPos;
     public Slider healthBar;
     Animator anim;
     public Color color1Player;
@@ -23,6 +24,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public float _nexthit = 0f;
     public Text pauseText;
     Rigidbody2D rb2d; // reference to RigidBody2d
+    EnemyController enemyController;
+    
 
     public Button mainMenuButton;
 
@@ -32,7 +35,10 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        
+        GameObject hb = Instantiate(healthBar.gameObject);
+        //put the healthbar on the canvas
+        hb.transform.SetParent(GameObject.Find("Canvas").transform);
+        healthBar = hb.GetComponent<Slider>();
 
         mainMenuButton.gameObject.SetActive(false);
         pauseText.text = "";
@@ -46,6 +52,10 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 	
     void Update()
     {
+        //update heath bar
+        healthBar.transform.position = Camera.main.WorldToScreenPoint(healthBarPos.transform.position);
+        healthBar.value = hp;
+
 
         if (Input.GetKeyDown(KeyCode.Escape) && !gamePaused) //pauses game
         {
@@ -190,10 +200,23 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         }
         
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Bees")
+        {
+            TakeDamage(enemyController.attackDamage);
+
+
+        }
+
+
+    }
+
     public void OneHiveDestroyed(int hivesdestroyed)
     {
         Debug.Log("A hive down");
         onemores += hivesdestroyed;
+
         if (onemores == 13)
         {
             //win game
@@ -230,4 +253,29 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         SceneManager.LoadScene(3);
 
     }
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("Player has been hurt");
+
+        hp -= damage;
+
+        StartCoroutine(PlayerDamaged());
+
+        if(hp <= 0)
+        {
+
+            //create coroutine that just restarts the level, just like level 1
+        }
+
+    }
+
+    IEnumerator PlayerDamaged()
+    {
+        sr1.color = color2Player;
+        yield return new WaitForSeconds(.5f);
+        sr1.color = color1Player;
+
+    }
+
 }
