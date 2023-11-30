@@ -556,7 +556,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: eb6713cf8556e8c489ff7bd7f56826e0, type: 3}
-    m_FontSize: 12
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -566,7 +566,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.16
+    m_LineSpacing: 1.25
   m_Text: "No man loves Paragon more than he loves himself. After training all your
     life to get a body like he has, you'd probably feel the same. He didn't intend
     to be super ripped; He simply just wanted to be strong enough to kill The Cleanser.
@@ -644,7 +644,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: eb6713cf8556e8c489ff7bd7f56826e0, type: 3}
-    m_FontSize: 16
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2001,7 +2001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: -4}
+  m_AnchoredPosition: {x: 286, y: -4}
   m_SizeDelta: {x: 225.3, y: 225.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457821707
@@ -5128,7 +5128,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: eb6713cf8556e8c489ff7bd7f56826e0, type: 3}
-    m_FontSize: 14
+    m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -6550,7 +6550,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: eb6713cf8556e8c489ff7bd7f56826e0, type: 3}
-    m_FontSize: 15
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -7848,8 +7848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32, y: -47}
-  m_SizeDelta: {x: 455.8, y: 332.7}
+  m_AnchoredPosition: {x: -32, y: -41.1}
+  m_SizeDelta: {x: 455.8, y: 344.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023669530
 MonoBehaviour:
