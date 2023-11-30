@@ -332,7 +332,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public void OnMainMenuButtonPress()
     {
         //game should quit to main menu
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
 
     }
 

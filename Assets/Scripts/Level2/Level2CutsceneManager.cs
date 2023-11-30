@@ -18,13 +18,13 @@ public class Level2Cutscene_Manager : MonoBehaviour {
 
     public void SkipCutscene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync(4);
     }
 
     IEnumerator Level2Cutscene1Wait()
     {
         SkipCutsceneButton.SetActive(true);
         yield return new WaitForSecondsRealtime(12.02f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync(4);
     }
 }

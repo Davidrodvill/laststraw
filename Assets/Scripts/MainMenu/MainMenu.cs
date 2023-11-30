@@ -11,14 +11,14 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		Screen.SetResolution(800, 600, true);
+		Screen.SetResolution(1920, 1080, true);
 		
 
 	}
 	
 	public void PlayGame()
 	{
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(1);
 
 
 	}
@@ -42,13 +42,13 @@ public class MainMenu : MonoBehaviour {
 	{
 		//if level 1 is selected, level 1 will load
 
-		SceneManager.LoadScene(0); //goes to level1 cutscene
+		SceneManager.LoadScene(1); //goes to level1 cutscene
 
 	}
 
 	public void OnLevel2Select()
 	{
-        SceneManager.LoadScene(4); //goes to level2 cutscene
+        SceneManager.LoadScene(3); //goes to level2 cutscene
 
     }
 

@@ -457,7 +457,7 @@ public class PlayerController : MonoBehaviour
         //after screen fully fades, respawn level
 
         //yield return new WaitForSecondsRealtime(3f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         
 
 
@@ -561,7 +561,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         //will go back to main menu, but for now will load level 2
         ResumeGame();
-        SceneManager.LoadSceneAsync(4);
+        SceneManager.LoadSceneAsync(3);
     }
 
 
@@ -577,7 +577,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         //will go back to main menu, but for now will load level 2
         ResumeGame();
-        SceneManager.LoadSceneAsync(4);
+        SceneManager.LoadSceneAsync(3);
 
     }
 
@@ -609,7 +609,7 @@ public class PlayerController : MonoBehaviour
     public void OnMainMenuButtonPress()
     {
         //game should quit to main menu
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
 
     }
 }
