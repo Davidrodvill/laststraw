@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2Cutscene.unity
     guid: e81e63414445762439846d3e937c68fa
+  - enabled: 1
+    path: Assets/Scenes/Level2EndingCutscene.unity
+    guid: 81e04560884f336409a28275e6660780

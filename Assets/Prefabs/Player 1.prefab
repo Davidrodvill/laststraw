@@ -236,7 +236,7 @@ MonoBehaviour:
   enemyLayers1:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 20
+  attackDamage: 5
   attackRate: 2
 --- !u!114 &114991186947553968
 MonoBehaviour:
@@ -255,7 +255,7 @@ MonoBehaviour:
   punchSpeed: 1
   hp: 100
   onemores: 0
-  numOfHivesLeft: 0
+  numOfHivesLeft: -3
   healthBarPos: {fileID: 4554498544821312}
   healthBar: {fileID: 114398631846428014, guid: fe198843ad5e4794f97000462bde2510,
     type: 2}
@@ -269,18 +269,9 @@ MonoBehaviour:
   pauseText: {fileID: 0}
   enemyController: {fileID: 114528556147352124, guid: 82cae909b8d7d3a45b8a95d4f8d43544,
     type: 2}
-  vp1: {fileID: 0}
-  vp2: {fileID: 0}
-  vp3: {fileID: 0}
-  MoralityCutsceneOpen: {fileID: 1679240336252876, guid: b882a24caddc25a4ea31c2d9c354d420,
-    type: 2}
-  GoodMoralityChoiceCutscene: {fileID: 1155413259212714, guid: d1b5f5ea8aa5d6548a0b85495d886d80,
-    type: 2}
-  BadMoralityChoiceCutscene: {fileID: 1195448416265632, guid: 5bcd2bf757a550747897318a1721c0a5,
-    type: 2}
-  goodChoiceButton: {fileID: 0}
-  badChoiceButton: {fileID: 0}
   mainMenuButton: {fileID: 0}
+  winGame: 0
+  beehives: {fileID: 114504598800802952, guid: 04f92b3b041257f449d67fa0f960baa2, type: 2}
   moving: 0
   facingRight: 0
   facingLeft: 0

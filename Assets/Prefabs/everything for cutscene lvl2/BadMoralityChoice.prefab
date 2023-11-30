@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1954623228258204}
+  m_RootGameObject: {fileID: 1167987392772414}
   m_IsPrefabParent: 1
---- !u!1 &1954623228258204
+--- !u!1 &1167987392772414
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4490433534319638}
-  - component: {fileID: 328230481623521856}
+  - component: {fileID: 4786241019689212}
+  - component: {fileID: 328542263109861168}
   m_Layer: 0
-  m_Name: GoodMoralityChoice
+  m_Name: BadMoralityChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &4490433534319638
+--- !u!4 &4786241019689212
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1954623228258204}
+  m_GameObject: {fileID: 1167987392772414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.96, y: 5.494, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,17 +40,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!328 &328230481623521856
+--- !u!328 &328542263109861168
 VideoPlayer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1954623228258204}
+  m_GameObject: {fileID: 1167987392772414}
   m_Enabled: 0
-  m_VideoClip: {fileID: 32900000, guid: 2cd77d154f4472145b58b60f1bc0fcc3, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 0dd55777f2a3dd145851075fde9f1a99, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 8fbc43c8f133a854891a52f4793e7ea4, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 70f5430a0fc99244f806f58ac2cd38f1, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex

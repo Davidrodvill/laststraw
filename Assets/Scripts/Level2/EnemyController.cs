@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour {
 
         GameObject hb = Instantiate(healthBar.gameObject);
         //put the healthbar on the canvas
-        hb.transform.SetParent(GameObject.Find("Canvas").transform);
+        hb.transform.SetParent(GameObject.Find("EnemyHealthbars").transform);
         healthBar = hb.GetComponent<Slider>();
     }
 	

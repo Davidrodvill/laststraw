@@ -1,10 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Threading;
 using UnityEngine.Video;
 public class Beehives : MonoBehaviour
 {
@@ -16,7 +13,7 @@ public class Beehives : MonoBehaviour
     public SpriteRenderer sr1;
     int hivedown = 1;
     public PlayerControllerLVL2 playercontlvl2;
-  
+    //public int numOfB
     
 
     // Use this for initialization
@@ -24,7 +21,7 @@ public class Beehives : MonoBehaviour
     {
         GameObject hb = Instantiate(healthBar.gameObject);
         //put the healthbar on the canvas
-        hb.transform.SetParent(GameObject.Find("Canvas").transform);
+        hb.transform.SetParent(GameObject.Find("BeehiveHealthbars").transform);
         healthBar = hb.GetComponent<Slider>();
         
         
@@ -36,29 +33,32 @@ public class Beehives : MonoBehaviour
         healthBar.transform.position = Camera.main.WorldToScreenPoint(healthbarPos.transform.position);
         healthBar.value = beehivehp;
 
+        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        
         if (beehivehp <= 0)
         {
             //GetComponent<PlayerControllerLVL2>().OneHiveDestroyed(hivedown + 1);
-            
+
             playercontlvl2.GetComponent<PlayerControllerLVL2>().OneHiveDestroyed();
-            Debug.Log("Number of hives left: " + playercontlvl2.numOfHivesLeft);
-            
+            //Debug.Log("Number of hives left: " + playercontlvl2.numOfHivesLeft);
+
 
             Destroy(gameObject);
             Destroy(healthBar.gameObject);
 
-            /*
-            GetComponent<PlayerControllerLVL2>().OneHiveDestroyed();
-            Debug.Log("Number of hives left: " + GetComponent<PlayerControllerLVL2>().numOfHivesLeft);
-            */
-        }
 
+            //GetComponent<PlayerControllerLVL2>().OneHiveDestroyed();
+            //GetComponent<PlayerControllerLVL2>().numOfHivesLeft--;
+           // Debug.Log("Number of hives left: " + GetComponent<PlayerControllerLVL2>().numOfHivesLeft);
+            
+        }
+        
     }
     
     IEnumerator waitsomeSeconds()

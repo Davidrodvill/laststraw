@@ -1,17 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Threading;
 using UnityEngine.Video;
 public class PlayerControllerLVL2 : MonoBehaviour {
 
     public float _playerSpeed = 3f; //_playerSpeed is how fast the player moves
     //public float maxSpeed = 15f;
     public float hSpeed = 3f, vSpeed = 3f, punchSpeed = 1f;
-    public int hp = 100, onemores, numOfHivesLeft = 13;
+    public int hp = 100, onemores, numOfHivesLeft = 1;
     public Transform healthBarPos;
     public Slider healthBar;
     Animator anim;
@@ -25,10 +22,15 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     public Text pauseText;
     Rigidbody2D rb2d; // reference to RigidBody2d
     public EnemyController enemyController;
+    public Button mainMenuButton;
+    public bool winGame = false;
+    public Beehives beehives;
+    /*
     public VideoPlayer vp1, vp2, vp3;
     public GameObject MoralityCutsceneOpen, GoodMoralityChoiceCutscene, BadMoralityChoiceCutscene;
     public Button goodChoiceButton, badChoiceButton, mainMenuButton;
     //public bool bossKilled = false; //In order to use this, youll need to create a new EnemyController script for the boss
+    */
 
     public bool moving = false, facingRight, facingLeft, facingUp, facingDown;
     
@@ -36,10 +38,10 @@ public class PlayerControllerLVL2 : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        numOfHivesLeft = 13;
+        //numOfHivesLeft = 1;
         GameObject hb = Instantiate(healthBar.gameObject);
         //put the healthbar on the canvas
-        hb.transform.SetParent(GameObject.Find("Canvas").transform);
+        hb.transform.SetParent(GameObject.Find("PlayerHealthbar").transform);
         healthBar = hb.GetComponent<Slider>();
 
         mainMenuButton.gameObject.SetActive(false);
@@ -49,11 +51,14 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         anim = GetComponent<Animator>();
 
         pauseTextBox.SetActive(false);
+
+        /* ////////////////////////////////////////////
         goodChoiceButton.gameObject.SetActive(false);
         badChoiceButton.gameObject.SetActive(false);
 
         
         BadMoralityChoiceCutscene.SetActive(true);
+        */
 
         /*
         vp1.enabled = false;
@@ -71,9 +76,15 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 	
     void Update()
     {
+        /*
+        if(beehives.beehivehp <= 0)
+        OneHiveDestroyed();
+        */
+
         //update heath bar
         healthBar.transform.position = Camera.main.WorldToScreenPoint(healthBarPos.transform.position);
         healthBar.value = hp;
+
 
         
 
@@ -242,13 +253,33 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
     }
 
+  
+    
     
     public void OneHiveDestroyed()
     {
-        numOfHivesLeft--;
+        numOfHivesLeft = (numOfHivesLeft - 1);
         Debug.Log("A hive down");
         //onemores += hivesdestroyed;
 
+        /*
+        if(numOfHivesLeft <= 0)
+        {
+            //win game
+            Debug.Log("all 13 hives down");
+
+            winGame = true;
+
+            /*
+            if(winGame == true)
+            {
+                SceneManager.LoadScene(5);
+            }
+            
+        }
+        */
+
+        /*
         if (numOfHivesLeft <= 0)
         {
             //win game
@@ -265,12 +296,12 @@ public class PlayerControllerLVL2 : MonoBehaviour {
             StartCoroutine(MoralityChoiceButtonSetActive());
             
         }
+        */
 
-        
     }
     
 
-    void PauseGame()
+   public void PauseGame()
     {
         pauseTextBox.SetActive(true);
         gamePaused = true;
@@ -282,7 +313,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         pauseTextBox.SetActive(false);
         gamePaused = false;
@@ -329,8 +360,8 @@ public class PlayerControllerLVL2 : MonoBehaviour {
 
     }
 
-
-
+     
+    /* ///////////////////////////////////////////////////
     IEnumerator MoralityChoiceButtonSetActive()
     {
         Debug.Log("IF YOU SEE ME, THINGS ARE GOOD");
@@ -340,7 +371,7 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         
         goodChoiceButton.gameObject.SetActive(true);
         badChoiceButton.gameObject.SetActive(true);
-        goodChoiceButton.enabled = true; ///////////////////////////////////////////////////////////////
+        goodChoiceButton.enabled = true; 
         badChoiceButton.enabled = true;
         Debug.Log("Good choice button is set to: " + goodChoiceButton.enabled);
         Debug.Log("bad choice button is set to: " + badChoiceButton.enabled);
@@ -383,6 +414,6 @@ public class PlayerControllerLVL2 : MonoBehaviour {
         SceneManager.LoadSceneAsync(3);
 
     }
-
+    */
 
 }

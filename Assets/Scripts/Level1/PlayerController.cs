@@ -489,7 +489,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         gamePaused = true;
         Time.timeScale = 0;
@@ -501,7 +501,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void ResumeGame()
+   public void ResumeGame()
     {
         gamePaused = false;
         Time.timeScale = 1;

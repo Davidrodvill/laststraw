@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
+		Screen.SetResolution(800, 600, true);
 		
 
 	}
@@ -52,6 +52,11 @@ public class MainMenu : MonoBehaviour {
 
     }
 
+	public void OnLevel2CutsceneSelect()
+	{
+		SceneManager.LoadScene(5);
+
+	}
 
 
 }
