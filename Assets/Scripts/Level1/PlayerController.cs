@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using System.Threading;
 using UnityEngine.Video;
 using UnityEngine.Assertions.Must;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
     public Button goodChoiceButton, badChoiceButton, mainMenuButton;
 
     public Text dialogues, playerName, pauseText, levelUnlock;
-
+    public AudioClip hurt;
+    new AudioSource sounds;
     public bool moving = false;
     public bool faceRight = true;
     public bool canMove = true, die = false, win = false, gamePaused, level2Unlock;
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        sounds = GetComponent<AudioSource>();
         rb2d = GetComponent<Rigidbody2D>();
         faceRight = true;
         anim = GetComponent<Animator>();
@@ -388,9 +391,8 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log("Player has been hit by a NormalCar");
 
-            
-        }
-        
+            sounds.PlayOneShot(hurt);
+        }        
 
         if (other.tag == "BigCar") //big cars do a bit more damage
         {
